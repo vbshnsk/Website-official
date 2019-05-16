@@ -84,20 +84,39 @@
     }
 
 
-/*glitch*/
 
-h1 {
+/*glitch*/
+.digisol_header{
   line-height: 0;
+}
+
+.glitch {
   /*Animation*/
   animation: glitch1 2.5s infinite;
 }
 
-h1:nth-child(2) {
+.glitch:nth-child(2) {
   /*color: #67f3da;*/
   animation: glitch2 2.5s infinite;
 }
 
-h1:nth-child(3) {
+.glitch:nth-child(3) {
+  /*color: #f16f6f;*/
+  animation: glitch3 2.5s infinite;
+}
+
+
+.digisol_header:hover .digisol_header {
+  /*Animation*/
+  animation: glitch1 2.5s infinite;
+}
+
+.digisol_header:hover .digisol_header:nth-child(2) {
+  /*color: #67f3da;*/
+  animation: glitch2 2.5s infinite;
+}
+
+.digisol_header:hover .digisol_header:nth-child(3) {
   /*color: #f16f6f;*/
   animation: glitch3 2.5s infinite;
 }

@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Digisol Website</title>
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  '
     <!-- 3D -->
     <script src='{{ url_for("static", filename="js/three.js") }}'></script>
     <script src='{{ url_for("static", filename="js/OBJLoader.js") }}'></script>
@@ -70,8 +77,8 @@
 
         // light
         const light = new THREE.DirectionalLight('#fff', 0.9);
-        light.position.set(12, 6, 3);
-        light.lookAt(6, 3, -2);
+        light.position.set(12, 2, 3);
+        light.lookAt(1, 1, 3);
         scene.add(light);
 
         // camera
@@ -120,10 +127,18 @@
             })
         })
 
-
         render();
 
+        // glitch every N seconds
+        setInterval(function(){
+           // toggle the class every five second
+           $('.digisol_header').toggleClass('glitch');
+           setTimeout(function(){
+             // toggle back after 1 second
+             $('.digisol_header').toggleClass('glitch');
+           },1000)
 
+        },6000);
     </script>
      <nav >
         <a href="/" id="logo">
