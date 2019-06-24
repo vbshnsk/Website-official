@@ -37,6 +37,14 @@
         font-weight: 700;
     }
 
+    .corporate_gradient{
+        background: linear-gradient(45deg, #212949 33%, #F20E6D 66%, #6969B3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #0B2349;
+        margin: 20px auto;
+    }
+
 
     #digisol_subheader #shitty{
         text-decoration: line-through;
