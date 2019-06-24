@@ -11,14 +11,16 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-    <!-- 3D -->
-    <script src='{{ url_for("static", filename="js/three.js") }}'></script>
-    <script src='{{ url_for("static", filename="js/OBJLoader.js") }}'></script>
-    <script src='{{ url_for("static", filename="js/MTLLoader.js") }}'></script>
 
     <!-- glitch -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
+    <!-- fabric -->
+    <script src='{{ url_for("static", filename="js/fabric.js") }}'></script>
+
+    <!-- rotate -->
+    <script src='{{ url_for("static", filename="js/jQueryRotate.js") }}'></script>
+    
 
     <!-- custom -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
@@ -27,139 +29,49 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
-    <script>
-        // Custom global variables
-        var mouse = {
-            x: 0,
-            y: 0
-        };
-
-        // Follows the mouse event
-        function onMouseMove(event) {
-
-            // Update the mouse variable
-            event.preventDefault();
-            mouse.x = (event.clientX / window.innerWidth) * 10 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 10 + 1;
-
-            // Make the sphere follow the mouse
-            var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
-            vector.unproject(camera);
-            var dir = vector.sub(camera.position).normalize();
-            var distance = -camera.position.z / dir.z;
-            var pos = camera.position.clone().add(dir.multiplyScalar(distance));
-            //mouseMesh.position.copy(pos);
-
-            light.position.copy(pos);
-        };
-
-        // Animate the elements
-        function animate() {
-            requestAnimationFrame(animate);
-            render();
-        }
-
-        // show fps
-        // javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})()
-
-        // scene
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color( 0x131621 );
-
-        window.addEventListener('resize', function() {
-            var WIDTH = window.innerWidth,
-            HEIGHT = window.innerHeight;
-            renderer.setSize(WIDTH, HEIGHT);
-            camera.aspect = WIDTH / HEIGHT;
-            camera.updateProjectionMatrix();
-        });
-
-        // light
-        const light = new THREE.DirectionalLight('#fff', 0.9);
-        light.position.set(12, 2, 3);
-        light.lookAt(1, 1, 3);
-        scene.add(light);
-
-        // camera
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 0, 1.3); // Set position like this
-        camera.lookAt(new THREE.Vector3(-0.05,0,1)); // Set look at coordinate like this
-
-        // model
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        // Create a circle around the mouse and move it
-        // The sphere has opacity 0
-
-        // When the mouse moves, call the given function
-        document.addEventListener('mousemove', onMouseMove, false);
-
-        function render(){
-            requestAnimationFrame(render);
-            renderer.render(scene, camera);
-        }
-
-        const objLoader = new THREE.OBJLoader();
-        new Promise((resolve) =>{
-            objLoader.load(
-                '{{ url_for("static", filename="models/disk.obj") }}',
-                (object) => {
-                    object.position.x = -0.6;
-                    object.position.y = -0.8;
-                    object.position.z = -0.1;
-
-                scene.add(object);
-            })
-        })
-
-        new Promise((resolve) =>{
-            objLoader.load(
-                '{{ url_for("static", filename="models/disk.obj") }}',
-                (object1) => {
-                    object1.position.x = 0.3;
-                    object1.position.y = -1.5;
-                    object1.position.z = 0.1;
-
-                scene.add(object1);
-            })
-        })
-
-        render();
-
-        // glitch every N seconds
-        setInterval(function(){
-           // toggle the class every five second
-           $('.digisol_header').toggleClass('glitch');
-           setTimeout(function(){
-             // toggle back after 1 second
-             $('.digisol_header').toggleClass('glitch');
-           },1000)
-
-        },6000);
-    </script>
-     <nav >
-        <a href="/" id="logo">
-        </a>
-         <div id="menu">
-                <a href="#">Our Works</a>
-                <a href="#">Products</a>
-                <a href="#">Contact Us</a>
-         </div>
-    </nav>
-    <div id="title_main">
-        <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
-        <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
-        <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
-        <h4 id="digisol_subheader">we make <span id="wordpress">cool</span> websites.</h4>
-        <h5 id="lm">Learn more &nbsp;
-            <div id="cirme">
-                <svg width="7"  viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.72608 8.57838C9.10561 8.17716 9.08803 7.54424 8.68681 7.16471L2.1486 0.979911C1.74738 0.600381 1.11446 0.617962 0.73493 1.01918C0.3554 1.4204 0.372981 2.05332 0.774199 2.43285L6.58595 7.93045L1.08835 13.7422C0.708817 14.1434 0.726398 14.7763 1.12762 15.1559C1.52883 15.5354 2.16175 15.5178 2.54128 15.1166L8.72608 8.57838ZM7.02777 8.91856L7.68751 8.90023L7.63198 6.901L6.97223 6.91933L7.02777 8.91856ZM7.68751 8.90023L8.02738 8.89079L7.97185 6.89156L7.63198 6.901L7.68751 8.90023Z" fill="#fff"/>
-                </svg>
+    <div id="slider">
+            <div id="circles-bg">
+                <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big">
+                <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small">>
             </div>
-        </h5>
+            <nav >
+                <a href="/" id="logo">
+                </a>
+                    <div id="menu">
+                        <a href="#about-us">About US</a>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#contacts">Contacts</a>
+                    </div>
+            </nav>
+            <div id="title_main">
+                <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
+                <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
+                <h1 class="digisol_header">Digisol <span class="corporate_gradient">Agency</span></h1>
+                <h4 id="digisol_subheader">we make <span id="wordpress">cool</span> websites.</h4>
+                <h5 id="lm">Learn more &nbsp;
+                    <div id="cirme">
+                        <svg width="7"  viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.72608 8.57838C9.10561 8.17716 9.08803 7.54424 8.68681 7.16471L2.1486 0.979911C1.74738 0.600381 1.11446 0.617962 0.73493 1.01918C0.3554 1.4204 0.372981 2.05332 0.774199 2.43285L6.58595 7.93045L1.08835 13.7422C0.708817 14.1434 0.726398 14.7763 1.12762 15.1559C1.52883 15.5354 2.16175 15.5178 2.54128 15.1166L8.72608 8.57838ZM7.02777 8.91856L7.68751 8.90023L7.63198 6.901L6.97223 6.91933L7.02777 8.91856ZM7.68751 8.90023L8.02738 8.89079L7.97185 6.89156L7.63198 6.901L7.68751 8.90023Z" fill="#fff"/>
+                        </svg>
+                    </div>
+                </h5>
+            </div>
     </div>
+    <div id="about-us">
+        <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+    <script>
+    $('#slider').mousemove(function(event) {
+        var msg = 'mousemove() position - x : ' + event.pageX + ', y : '
+                        + event.pageY + ' [counter] : ';
+        
+        
+        $(".big").rotate(event.pageX);             
+        console.log(msg)
+    });
+    </script>
 </body>
 </html>

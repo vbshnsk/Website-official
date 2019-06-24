@@ -1,19 +1,45 @@
- html, body{
+ body{
         margin: 0;
         font-family: 'Roboto', sans-serif;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
-    canvas {
-        width: 100vw;
-        height: 100vh;
-        display: block;
-        position: fixed;
-        z-index: -9999;
+    #circles-bg{
+      height: 120%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      background-color: black;
+    }
+
+    #circles-bg img{
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #circles-bg img.big{
+      height: 100%;
+      right: 120px;
+      bottom: -250px;
+      position: absolute;
+    }
+
+    #circles-bg img.small{
+      height: 90%;
+      right: -90px;
+      bottom: -330px;
+      position: absolute;
+    }
+
+
+
+    #slider{
+      height: 100%;
+      overflow: hidden;
     }
 
     #title_main{
-        padding: 27% 0 0 5%;
+        padding: 10% 0 0 5%;
     }
 
     .digisol_header{
@@ -31,7 +57,6 @@
         margin-top: 60px;
     }
 
-    #digisol_subheader #wordpress,
     h1 span{
         color: #F44C82 !important;
         font-weight: 700;
@@ -89,6 +114,12 @@
 
     #cirme svg{
         padding: 7px 0 0 9px;
+    }
+
+    #about-us{
+      background-color: black;
+      overflow: hidden;
+      color: white;
     }
 
 
