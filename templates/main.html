@@ -98,27 +98,12 @@
 
                },  // This option accepts a callback function. The function will be called before the page moves.
                afterMove: function(index) {
-                if ($(".big").hasClass("c1")){
-                        $(".big").removeClass("c1").addClass("c2");
-                        $(".small").removeClass("c1").addClass("c2");
-                        return false;
-                    }
-                    else if ($(".big").hasClass("c2")){
-                        $(".big").removeClass("c2").addClass("c3");
-                        $(".small").removeClass("c2").addClass("c3");
-                        return false;
-                    }
-                    else if ($(".big").hasClass("c3")){
-                        $(".big").removeClass("c3").addClass("c4");
-                        $(".small").removeClass("c3").addClass("c4");
-                        return false;
-                    }
-                    else{
-                        $(".big").removeClass("c4").addClass("c1");
-                        $(".small").removeClass("c4").addClass("c1");
-                        return false;
-                    }
 
+                    var cls = "c" + index
+                    $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
+                    $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
+
+                console.log(index)
 
                },   // This option accepts a callback function. The function will be called after the page moves.
                loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
