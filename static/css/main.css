@@ -4,6 +4,14 @@
         overflow-x: hidden;
     }
 
+    h1{
+      font-size: 50px;
+    }
+
+    h1, h2, h3, h4, h5, h6, p{
+      color: #FFFCFB;
+    }
+
     /*Circles*/
 
     #circles-bg{
@@ -34,7 +42,7 @@
     }
 
     .circle{
-      transition: 300ms linear all;
+      transition: 1000ms linear all;
     }
 
     /*Slider*/
@@ -121,11 +129,39 @@
 
     /*about us*/
 
+    .wraptext{
+      max-width: 992px;
+      margin: 0 auto;
+    }
+
     #about-us{
       background-color: black;
-      overflow: hidden;
       color: white;
-      min-height: 600px;
+      /*min-height: 600px;*/
+      padding: 50px;
+      height: -webkit-fill-available;
+    }
+
+    #about-us .halftext{
+      max-width: 70%;
+      color: #FFFCFB;
+      font-size: 20px;
+    }
+
+    #whatwedo{
+      margin-top: 50px;
+    }
+
+    #whatwedo a{
+      padding: 15px 25px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-family: Roboto;
+      background-color: #F8738D;
+      font-weight: 700;
+      border: none;
+      color: #131621;
+      text-decoration: none;
     }
 
 
