@@ -4,6 +4,8 @@
         overflow-x: hidden;
     }
 
+    /*Circles*/
+
     #circles-bg{
       height: 120%;
       width: 100%;
@@ -31,7 +33,7 @@
       position: absolute;
     }
 
-
+    /*Slider*/
 
     #slider{
       height: 100%;
@@ -70,10 +72,7 @@
         margin: 20px auto;
     }
 
-
-    #digisol_subheader #shitty{
-        text-decoration: line-through;
-    }
+    /*menu*/
 
     #menu{
         padding: 2% 7% 0 0;
@@ -116,10 +115,13 @@
         padding: 7px 0 0 9px;
     }
 
+    /*about us*/
+
     #about-us{
       background-color: black;
       overflow: hidden;
       color: white;
+      min-height: 600px;
     }
 
 
