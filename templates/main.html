@@ -15,16 +15,13 @@
     <!-- glitch -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
-    <!-- fabric -->
-    <script src='{{ url_for("static", filename="js/fabric.js") }}'></script>
-
     <!-- rotate -->
     <script src='{{ url_for("static", filename="js/jQueryRotate.js") }}'></script>
-    
-    <!-- scrollmagic -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
+    <!-- one-page scroll -->
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/onepage-scroll.css") }}'>
+    <script src='{{ url_for("static", filename="js/jquery.onepage-scroll.js") }}'></script>
+    
     <!-- custom -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
     <script src='{{ url_for("static", filename="js/main.js") }}'></script>
@@ -32,55 +29,77 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
-    <div id="slider">
-            <div id="circles-bg">
-                <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big">
-                <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small">>
+    <div id="circles-bg">
+                    <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big">
+                    <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small">>
+                </div>
+    <div class="main">
+        <section id="slider">
+                
+                <nav >
+                    <a href="/" id="logo">
+                    </a>
+                        <div id="menu">
+                            <a href="#about-us">About US</a>
+                            <a href="#services">Services</a>
+                            <a href="#portfolio">Portfolio</a>
+                            <a href="#contacts">Contacts</a>
+                        </div>
+                </nav>
+                <div id="title_main">
+                    <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
+                    <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
+                    <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
+                    <h4 id="digisol_subheader">we make <span id="wordpress">cool</span> websites.</h4>
+                    <h5 id="lm">Learn more &nbsp;
+                        <div id="cirme">
+                            <svg width="7"  viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.72608 8.57838C9.10561 8.17716 9.08803 7.54424 8.68681 7.16471L2.1486 0.979911C1.74738 0.600381 1.11446 0.617962 0.73493 1.01918C0.3554 1.4204 0.372981 2.05332 0.774199 2.43285L6.58595 7.93045L1.08835 13.7422C0.708817 14.1434 0.726398 14.7763 1.12762 15.1559C1.52883 15.5354 2.16175 15.5178 2.54128 15.1166L8.72608 8.57838ZM7.02777 8.91856L7.68751 8.90023L7.63198 6.901L6.97223 6.91933L7.02777 8.91856ZM7.68751 8.90023L8.02738 8.89079L7.97185 6.89156L7.63198 6.901L7.68751 8.90023Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </h5>
+                </div>
+        </section>
+        <section id="about-us">
+            <div class="wraptext">
+                <h1>Hello, We are Digisol</h1>
+                <p class="halftext">We help businesses grow by telling their story & creating amazing digital experiences.</p>
+                <p class="halftext">Our are team of young yet experienced perfectionists, provides full-cycle of services helping your company to become a leading representative on the Web.</p>
+                <div id="whatwedo">
+                    <a href="#services" >
+                        What we do?
+                    </a>
+                </div>
+                
             </div>
-            <nav >
-                <a href="/" id="logo">
-                </a>
-                    <div id="menu">
-                        <a href="#about-us">About US</a>
-                        <a href="#services">Services</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#contacts">Contacts</a>
-                    </div>
-            </nav>
-            <div id="title_main">
-                <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
-                <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
-                <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
-                <h4 id="digisol_subheader">we make <span id="wordpress">cool</span> websites.</h4>
-                <h5 id="lm">Learn more &nbsp;
-                    <div id="cirme">
-                        <svg width="7"  viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.72608 8.57838C9.10561 8.17716 9.08803 7.54424 8.68681 7.16471L2.1486 0.979911C1.74738 0.600381 1.11446 0.617962 0.73493 1.01918C0.3554 1.4204 0.372981 2.05332 0.774199 2.43285L6.58595 7.93045L1.08835 13.7422C0.708817 14.1434 0.726398 14.7763 1.12762 15.1559C1.52883 15.5354 2.16175 15.5178 2.54128 15.1166L8.72608 8.57838ZM7.02777 8.91856L7.68751 8.90023L7.63198 6.901L6.97223 6.91933L7.02777 8.91856ZM7.68751 8.90023L8.02738 8.89079L7.97185 6.89156L7.63198 6.901L7.68751 8.90023Z" fill="#fff"/>
-                        </svg>
-                    </div>
-                </h5>
-            </div>
-    </div>
-    <div id="about-us">
-        <div class="wraptext">
-            <h1>Hello, We are Digisol</h1>
-            <p class="halftext">We help businesses grow by telling their story & creating amazing digital experiences.</p>
-            <p class="halftext">Our are team of young yet experienced perfectionists, provides full-cycle of services helping your company to become a leading representative on the Web.</p>
-            <div id="whatwedo">
-                <a href="#services" >
-                    What we do?
-                </a>
-            </div>
-            
-        </div>
 
-    </div>
-    <div id="services">
+        </section>
 
+
+        <section id="services">
+            section3
+        </section>
     </div>
 
-    <script>
+        <script>
 
-    </script>
+            $(".main").onepage_scroll({
+   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+   keyboard: true,                  // You can activate the keyboard controls
+   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+                                    // the browser's width is less than 600, the fallback will kick in.
+   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+});
+
+        </script>
 </body>
 </html>
