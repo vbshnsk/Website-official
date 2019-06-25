@@ -21,7 +21,7 @@
     <!-- one-page scroll -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/onepage-scroll.css") }}'>
     <script src='{{ url_for("static", filename="js/jquery.onepage-scroll.js") }}'></script>
-    
+
     <!-- custom -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
     <script src='{{ url_for("static", filename="js/main.js") }}'></script>
@@ -30,8 +30,8 @@
 </head>
 <body>
     <div id="circles-bg">
-        <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big">
-        <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small">>
+        <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big c1">
+        <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small c1">
     </div>
     <div class="main">
         <nav >
@@ -45,8 +45,8 @@
                 </div>
         </nav>
         <section id="slider">
-                
-                
+
+
                 <div id="title_main">
                     <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
                     <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
@@ -71,7 +71,7 @@
                         What we do?
                     </a>
                 </div>
-                
+
             </div>
 
         </section>
@@ -80,10 +80,13 @@
         <section id="services">
             <h1>SECTION 3</h1>
         </section>
+        <section id="services">
+            <h1>SECTION 4</h1>
+        </section>
     </div>
 
         <script>
-
+            // scroll fullscreen
             $(".main").onepage_scroll({
                sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
                easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
@@ -92,17 +95,38 @@
                pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
                updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
                beforeMove: function(index) {
-                    $(".big").animate({ left: -30 }, 500);
-                    $(".small").animate({ left: -120 }, 500);
 
                },  // This option accepts a callback function. The function will be called before the page moves.
-               afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
-               loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+               afterMove: function(index) {
+                if ($(".big").hasClass("c1")){
+                        $(".big").removeClass("c1").addClass("c2");
+                        $(".small").removeClass("c1").addClass("c2");
+                        return false;
+                    }
+                    else if ($(".big").hasClass("c2")){
+                        $(".big").removeClass("c2").addClass("c3");
+                        $(".small").removeClass("c2").addClass("c3");
+                        return false;
+                    }
+                    else if ($(".big").hasClass("c3")){
+                        $(".big").removeClass("c3").addClass("c4");
+                        $(".small").removeClass("c3").addClass("c4");
+                        return false;
+                    }
+                    else{
+                        $(".big").removeClass("c4").addClass("c1");
+                        $(".small").removeClass("c4").addClass("c1");
+                        return false;
+                    }
+
+
+               },   // This option accepts a callback function. The function will be called after the page moves.
+               loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
                keyboard: true,                  // You can activate the keyboard controls
                responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
                                                 // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
                                                 // the browser's width is less than 600, the fallback will kick in.
-               direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+               direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
             });
 
         </script>

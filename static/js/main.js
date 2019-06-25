@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// circle rotation
     $(".big").rotate(-45);
-    $(".small").rotate(-45); 
+    $(".small").rotate(-45);
 
     var big = $(".big");
     var offset_big = big.offset();
@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    $('#slider').mousemove(function(event) {
+    $('section').mousemove(function(event) {
         var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
         var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
 
-        
+
         $(".big").rotate(angle_big);
-        $(".small").rotate(angle_small);               
+        $(".small").rotate(angle_small);
     });
 
 
