@@ -33,6 +33,10 @@
       position: absolute;
     }
 
+    .circle{
+      transition: 300ms linear all;
+    }
+
     /*Slider*/
 
     #slider{
