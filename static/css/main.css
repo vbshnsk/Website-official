@@ -20,7 +20,6 @@
         color: #FFFCFB;
     }
 
-
     h1{
       font-size: 50px;
     }
@@ -161,7 +160,7 @@
       left: 310px;
       text-decoration: none;
       color: #A43F94;
-      transition: opacity 1000ms linear;
+      transition: opacity 1000ms cubic-bezier(0.510, 0.010, 0.550, 1.000);
     }
 
     .menuitem3{
@@ -348,7 +347,7 @@
     #about-us .halftext{
       max-width: 70%;
       color: #FFFCFB;
-      font-size: 20px;
+      font-size: 24px;
     }
 
     #whatwedo{
@@ -359,7 +358,7 @@
       padding: 15px 25px;
       border-radius: 5px;
       font-size: 20px;
-      font-family: Roboto;
+      font-family: 'Raleway', sans-serif;
       background-color: #F8738D;
       font-weight: 700;
       border: none;
