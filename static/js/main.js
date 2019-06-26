@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
         var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
 
+        if (angle_big >)
 
+        console.log(Math.abs(angle_big));
         $(".big").rotate(angle_big);
         $(".small").rotate(angle_small);
     });
