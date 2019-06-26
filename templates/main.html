@@ -49,7 +49,7 @@
                     <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
                     <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
                     <h1 class="digisol_header">Digisol <span class="corporate_gradient glitch">Agency</span></h1>
-                    <h4 id="digisol_subheader">we make <span id="wordpress">cool</span> websites.</h4>
+                    <h4 id="digisol_subheader">we make <span class="corporate_gradient">cool</span> websites.</h4>
                     <h5 id="lm">Learn more &nbsp;
                         <div id="cirme">
                             <svg width="7"  viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,19 +69,14 @@
                         What we do?
                     </a>
                 </div>
-
             </div>
-
         </section>
-
-
         <section id="services">
             <div class="rightside">
-                 <h1>SECTION 3</h1>
+                <h1>SECTION 3</h1>
             </div>
-
         </section>
-        <section id="services">
+        <section id="portfoli">
             <div class="leftside">
                 <h1>SECTION 4</h1>
             </div>
@@ -94,18 +89,19 @@
                sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
                easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
                                                 // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-               animationTime: 1,             // AnimationTime let you define how long each section takes to animate
+               animationTime: 300,             // AnimationTime let you define how long each section takes to animate
                pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
                updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
                beforeMove: function(index) {
-
+                    
+                
                },  // This option accepts a callback function. The function will be called before the page moves.
                afterMove: function(index) {
                     // change circles position on slide change
                     var cls = "c" + index
                     $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
                     $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-
+                    
                },   // This option accepts a callback function. The function will be called after the page moves.
                loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
                keyboard: true,                  // You can activate the keyboard controls
