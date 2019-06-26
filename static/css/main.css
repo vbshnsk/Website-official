@@ -12,8 +12,8 @@
 
     body{
         margin: 0;
-        font-family: 'Objectivity';
         overflow-x: hidden;
+        color: #FFFCFB;
     }
 
 
@@ -21,8 +21,17 @@
       font-size: 50px;
     }
 
-    h1, h2, h3, h4, h5, h6, p{
-      color: #FFFCFB;
+    h1, h2, h3, h4, h5, h6{
+      font-family: 'Objectivity';
+    }
+
+    p, a{
+      font-family: 'Raleway', sans-serif;
+    }
+
+    #stringlogo{
+      font-family: 'Objectivity';
+      letter-spacing: -2px;
     }
 
     /*Circles*/
@@ -170,10 +179,8 @@
       left: 141px;
     }
 
-
-
     .digisol_header:nth-child(5):hover {
-      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       perspective: 1000px;
@@ -220,18 +227,32 @@
         margin: 20px auto;
     }
 
+    #sticky_rotated{
+        position: absolute;
+        margin: 0;
+        left: -130px;
+        bottom: 310px;
+        transform: rotate(270deg);
+        font-size: 24px;
+    }
+
     /*menu*/
 
     #menu{
-        padding: 2% 7% 0 0;
-        text-align: right;
+        padding: 0 7% 0 0;
+    }
+
+    .topnav-right{
+        float: right;
     }
 
     #menu a{
         text-decoration: none;
         padding: 0 3%;
-        color: white;
-        font-size: 18px;
+        color: #FFFCFB;
+        font-size: 24px;
+        float: left;
+        line-height: 18px;
     }
 
     #logo{

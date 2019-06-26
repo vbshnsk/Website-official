@@ -15,6 +15,9 @@
     <!-- glitch -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+
     <!-- rotate -->
     <script src='{{ url_for("static", filename="js/jQueryRotate.js") }}'></script>
 
@@ -33,18 +36,18 @@
         <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big c1">
         <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small c1">
     </div>
-    <nav >
-        <a href="/">
-        </a>
-            <div id="menu">
-                <a href="#about-us">About US</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contacts">Contacts</a>
-            </div>
-    </nav>
+
     <div class="main">
+
         <section id="slider">
+                <nav id="menu">
+                    <a href="/" id="stringlogo">
+                        digisol agency
+                    </a>
+                    <div class="topnav-right">
+                        <a href="#contacts">contact</a>
+                    </div>
+                </nav>
                 <div id="title_main">
                     <img src="../static/img/digisol-d.png" id="logo">
                     <h1 class="digisol_header layer4">digisol</h1>
@@ -52,6 +55,7 @@
                     <h1 class="digisol_header layer2">digisol</h1>
                     <h1 class="digisol_header layer1">digisol</h1>
                 </div>
+                <p id="sticky_rotated">digital solutions for your business</p>
         </section>
         <section id="about-us">
             <div class="rightside">
