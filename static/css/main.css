@@ -90,53 +90,10 @@
 
     .circle.big, .circle.small{
       -webkit-transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); 
-   -moz-transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); 
-     -o-transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); 
-        transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); /* custom */
+      -moz-transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); 
+      -o-transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); 
+      transition: all 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); /* custom */
     }
-
-
-    /*Animations*/
-
-/*    .c1c2_big{
-      animation-duration: 1s;
-      animation-name: c1c2_big;
-      animation-delay: .3s;
-      left: -3%;
-      right: unset;
-    }
-
-    @keyframes c1c2_big{
-      from{
-        right: 8%;
-        left: unset;
-      }
-
-      to{
-        left: -3%;
-        right: unset;
-      }
-    }
-
-    .c1c2_small{
-      animation-duration: 1s;
-      animation-name: c1c2_small;
-      animation-delay: .3s;
-      left: -20%;
-      right: unset;
-    }
-
-    @keyframes c1c2_small{
-      from{
-        right: -8%;
-        left: unset;
-      }
-
-      to{
-        left: -20%;
-        right: unset;
-      }
-    }*/
 
     /*Slider*/
 
