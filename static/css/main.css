@@ -9,6 +9,10 @@
     font-style: normal;
     }
 
+    .hide{
+      /*display: none;*/
+      opacity: 0;
+    }
 
     body{
         margin: 0;
@@ -145,6 +149,39 @@
       transform: scale(0.9);
     }
 
+    .digisol-item-pair{
+      height: 0;
+    }
+
+    .menuitem{
+      font-size: 30px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 0;
+      position: relative;
+      left: 310px;
+      text-decoration: none;
+      color: #A43F94;
+      transition: opacity 1000ms linear;
+    }
+
+    .menuitem3{
+      left: 345px;
+      top: 45px;
+      color: #F2085B;
+    }
+
+    .menuitem2{
+      left: 383px;
+      top: 90px;
+      color: #F8738D;
+    }
+
+    .menuitem1{
+      left: 420px;
+      top: 137px;
+      color: white;
+    }
+
     .layer1{
           color: white;
           top: 0;
@@ -183,7 +220,7 @@
       left: 141px;
     }
 
-    .digisol_header:nth-child(5):hover {
+    .layer1:hover {
       animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;

@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".digisol_header").removeClass("header_step3 header_step2 header_step1");
+            $(".menuitem").addClass("hide");
 
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
@@ -57,10 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // digisol menu click
-    $(".digisol_header").on( "click", function() {
+    $(".layer1").on( "click", function() {
         $(".layer3").toggleClass("header_step3");
         $(".layer2").toggleClass("header_step2");
         $(".layer1").toggleClass("header_step1");
+        $(".menuitem").toggleClass("hide");
         $("#logo").addClass("clicked");
         setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
