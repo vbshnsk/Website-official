@@ -1,6 +1,14 @@
- body{
+    
+    /*fonts*/
+    @font-face {
+      font-family: 'Objectivity';
+      src:  url('Objectivity-Bold.otf') format('otf'),
+            url('Objectivity-Bold.woff') format('woff2');
+    }
+
+    body{
         margin: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Objectivity', sans-serif;
         overflow-x: hidden;
     }
 
@@ -103,14 +111,62 @@
     }
 
     #title_main{
-        padding: 10% 0 0 5%;
+        padding: 10% 0 0 3%;
+        width: 33%;
+        text-align: center;
     }
 
     .digisol_header{
         font-weight: 700;
         font-size: 110px;
+        letter-spacing: -5px;
         color: white;
         margin: 0;
+        position: relative;
+        color: white;
+    }
+
+    .digisol_header:nth-child(2){
+          left: 2px;
+          top: 2px;
+          color: #A43F94;
+    }
+
+    .digisol_header:nth-child(3){
+          left: 2px;
+          bottom: : 2px;
+          color: #F2085B;
+    }
+
+    .digisol_header:nth-child(4){
+          right: 2px;
+          color: #F8738D;
+    }
+
+    .digisol_header:hover{
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+      animation-iteration-count:infinite;
+    }
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(1px, -1px, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(1px, 1px, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-1px, -1px, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(-1px, 1px, 0);
+      }
     }
 
     #digisol_subheader{
@@ -149,8 +205,7 @@
     }
 
     #logo{
-        float: left;
-        padding: 1% 0 0 5%;
+      margin-bottom: 12%;
     }
 
     #logo svg{
