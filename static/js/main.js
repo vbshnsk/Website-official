@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var cls = "c" + index
             $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
+            $(".digisol_header").removeClass("header_step3 header_step2 header_step1");
 
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
@@ -53,6 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                         // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
                                         // the browser's width is less than 600, the fallback will kick in.
        direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
+    });
+
+    // digisol menu click
+    $(".digisol_header").on( "click", function() {
+        $(".layer3").toggleClass("header_step3");
+        $(".layer2").toggleClass("header_step2");
+        $(".layer1").toggleClass("header_step1");
+        $("#logo").addClass("clicked");
+        setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
 
 
