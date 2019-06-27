@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".digisol_header").removeClass("header_step3 header_step2 header_step1");
             $(".menuitem").addClass("hide");
+            $(".circle").removeClass("blur");
 
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
