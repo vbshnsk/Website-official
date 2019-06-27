@@ -9,10 +9,16 @@
     font-style: normal;
     }
 
+    /*effects*/
+
     .hide{
       /*display: none;*/
       opacity: 0;
       pointer-events: none;
+    }
+
+    .blur{
+      filter: blur(4px);
     }
 
     body{
@@ -124,7 +130,8 @@
     .circle.big, .circle.small{
       transition: bottom 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000),
                   right 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000),
-                  transform 1000ms linear; /* custom */
+                  transform 1000ms linear,
+                  filter 1000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); /* custom */
     }
 
     /*Slider*/

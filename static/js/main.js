@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $(".layer1").toggleClass("header_step1 wiggle");
         $(".menuitem").toggleClass("hide");
         $("#logo").addClass("clicked");
+        $(".circle").toggleClass("blur");
         setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
 
@@ -80,12 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
-    
+
     function closeMenu() {
         $(".layer3").removeClass("header_step3");
         $(".layer2").removeClass("header_step2");
         $(".layer1").removeClass("header_step1").addClass("wiggle");
         $(".menuitem").addClass("hide");
+        $(".circle").removeClass("blur");
     }
 
 
