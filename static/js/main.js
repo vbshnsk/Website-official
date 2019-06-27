@@ -71,12 +71,22 @@ document.addEventListener('DOMContentLoaded', function() {
     $('html').click(function(e) {                    
        if($(e.target).is("#slider"))
        {
-            $(".layer3").removeClass("header_step3");
-            $(".layer2").removeClass("header_step2");
-            $(".layer1").removeClass("header_step1").addClass("wiggle");
-            $(".menuitem").addClass("hide");
+            closeMenu();
        }
     }); 
+
+    $(document).keyup(function(e) {
+         if (e.key === "Escape") { // escape key maps to keycode `27`
+            closeMenu();
+        }
+    });
+    
+    function closeMenu() {
+        $(".layer3").removeClass("header_step3");
+        $(".layer2").removeClass("header_step2");
+        $(".layer1").removeClass("header_step1").addClass("wiggle");
+        $(".menuitem").addClass("hide");
+    }
 
 
 }, false);
