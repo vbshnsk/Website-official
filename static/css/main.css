@@ -36,6 +36,14 @@
       font-family: 'Objectivity';
       letter-spacing: -2px;
       font-size: 24px;
+      position: relative;
+      top: 50px;
+      left: 50px;
+      text-decoration: none;
+      color: #FFFCFB;
+      line-height: 18px;
+      position: absolute;
+      z-index: 2;
     }
 
     /*Circles*/
@@ -220,14 +228,18 @@
       left: 141px;
     }
 
-    .layer1:hover {
+    .layer1:hover{
+      cursor: pointer;
+    
+    }
+
+    .wiggle:hover {
       animation: shake 0.55s cubic-bezier(.36,.07,.19,.97) both;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       perspective: 1000px;
       animation-iteration-count:infinite;
-      cursor: pointer;
-    }
+    }  
 
     @keyframes shake {
       10%, 90% {
@@ -271,10 +283,10 @@
     #sticky_rotated{
         position: absolute;
         margin: 0;
-        left: -130px;
+        left: -100px;
         bottom: 310px;
         transform: rotate(270deg);
-        font-size: 24px;
+        font-size: 18px;
     }
 
     /*menu*/
@@ -302,11 +314,9 @@
       margin-bottom: 65px;
       /*padding-left: 40px;*/
       width: 120px;
+      cursor: pointer;
     }
 
-    #logo svg{
-        border-radius: 50%;
-    }
 
     #lm{
         padding-left: 10%;

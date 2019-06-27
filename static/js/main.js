@@ -58,14 +58,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // digisol menu click
-    $(".layer1").on( "click", function() {
+    $(".layer1, #logo").on( "click", function() {
         $(".layer3").toggleClass("header_step3");
         $(".layer2").toggleClass("header_step2");
-        $(".layer1").toggleClass("header_step1");
+        $(".layer1").toggleClass("header_step1 wiggle");
         $(".menuitem").toggleClass("hide");
         $("#logo").addClass("clicked");
         setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
+
+    $('html').click(function(e) {                    
+       if($(e.target).is("#slider"))
+       {
+            $(".layer3").removeClass("header_step3");
+            $(".layer2").removeClass("header_step2");
+            $(".layer1").removeClass("header_step1").addClass("wiggle");
+            $(".menuitem").addClass("hide");
+       }
+    }); 
 
 
 }, false);
