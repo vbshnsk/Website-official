@@ -35,6 +35,7 @@
     #stringlogo{
       font-family: 'Objectivity';
       letter-spacing: -2px;
+      font-size: 24px;
     }
 
     /*Circles*/
@@ -220,7 +221,7 @@
     }
 
     .layer1:hover {
-      animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
+      animation: shake 0.55s cubic-bezier(.36,.07,.19,.97) both;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       perspective: 1000px;
@@ -286,16 +287,21 @@
         float: right;
     }
 
+    #cont{
+        position: relative;
+        font-size: 18px;
+    }
+
     #menu a{
         text-decoration: none;
         color: #FFFCFB;
-        font-size: 24px;
         line-height: 18px;
     }
 
     #logo{
       margin-bottom: 65px;
-      padding-left: 40px;
+      /*padding-left: 40px;*/
+      width: 120px;
     }
 
     #logo svg{
