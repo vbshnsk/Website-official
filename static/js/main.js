@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     $('#slider').mousemove(function(event) {
-        var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
-        var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
-
-        // console.log(Math.abs(angle_big));
-        $(".big").rotate(angle_big - 360);
-        $(".small").rotate(angle_small - 360);
+        if (!$("#title_main").hasClass("opened")){
+            var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
+            var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
+    
+            // console.log(Math.abs(angle_big));
+            $(".big").rotate(angle_big - 360);
+            $(".small").rotate(angle_small - 360);   
+        }
     });
 
     // scroll fullscreen
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // digisol menu click (open menu)
     $(".layer1, #logo").on( "click", function() {
+        $("#title_main").toggleClass("opened");
         $(".layer3").toggleClass("header_step3");
         $(".layer2").toggleClass("header_step2");
         $(".layer1").toggleClass("header_step1 wiggle");
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $(".menuitem").addClass("hide");
         $(".circle").removeClass("blur");
         $("#circles-bg").removeClass("dark");
+        $("#title_main").removeClass("opened");
     }
 
 
