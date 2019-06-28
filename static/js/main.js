@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
 
         // console.log(Math.abs(angle_big));
-        $(".big").rotate(angle_big + 360);
-        $(".small").rotate(angle_small + 360);
+        $(".big").rotate(angle_big - 360);
+        $(".small").rotate(angle_small - 360);
     });
 
     // scroll fullscreen
