@@ -41,10 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var cls = "c" + index
             $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-            $(".digisol_header").removeClass("header_step3 header_step2 header_step1");
-            $(".menuitem").addClass("hide");
-            $(".circle").removeClass("blur");
-
+            closeMenu();
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
 
@@ -58,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
        direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
     });
 
-    // digisol menu click
+    // digisol menu click (open menu)
     $(".layer1, #logo").on( "click", function() {
         $(".layer3").toggleClass("header_step3");
         $(".layer2").toggleClass("header_step2");
@@ -66,17 +63,17 @@ document.addEventListener('DOMContentLoaded', function() {
         $(".menuitem").toggleClass("hide");
         $("#logo").addClass("clicked");
         $(".circle").toggleClass("blur");
+        $("#circles-bg").toggleClass("dark");
         setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
 
     // close digisol menu when clicked somewhere on 1st slide
     $('html').click(function(e) {                    
-       if($(e.target).is("#slider"))
-       {
+       if($(e.target).is("#slider")){
             closeMenu();
        }
     }); 
-
+    // close digisol menu when "escape" key pushed
     $(document).keyup(function(e) {
          if (e.key === "Escape") { // escape key maps to keycode `27`
             closeMenu();
@@ -89,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $(".layer1").removeClass("header_step1").addClass("wiggle");
         $(".menuitem").addClass("hide");
         $(".circle").removeClass("blur");
+        $("#circles-bg").removeClass("dark");
     }
 
 
