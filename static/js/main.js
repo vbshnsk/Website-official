@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
        updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
        beforeMove: function(index) {
             // change circles position on slide change
-            var cls = "c" + index
+            var cls = "c" + index;
             $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
             $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-            $(".menuitem").hide() // so menuitems dont mess with horizontal slide
+            $(".menuitem").hide(); // so menuitems dont mess with horizontal slide
             closeMenu();
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $(".layer3").toggleClass("header_step3");
         $(".layer2").toggleClass("header_step2");
         $(".layer1").toggleClass("header_step1 wiggle");
-        $(".menuitem").show() // if slides scrolled before
+        $(".menuitem").show(); // if slides scrolled before
         $(".menuitem").toggleClass("hide");
         $("#logo").addClass("clicked");
         $(".circle").toggleClass("blur");
