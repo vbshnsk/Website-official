@@ -139,7 +139,7 @@
                   right 2000ms cubic-bezier(0.510, 0.010, 0.550, 1.000),
                   transform 1000ms linear,                                /* rotation */
                   filter 1000ms cubic-bezier(0.510, 0.010, 0.550, 1.000); /* blur */
-      will-change: transform, filter, bottom, right;
+      /*will-change: transform, filter, bottom, right;*/
     }
 
     /*Slider*/
@@ -189,7 +189,7 @@
       text-decoration: none;
       color: #A43F94;
       transition: left 1000ms cubic-bezier(0.510, 0.010, 0.550, 1.000);
-      will-change: left, top;
+      /*will-change: left, top;*/
     }
 
     .menuitem3{
