@@ -131,7 +131,7 @@ p, a{
 .circle.big, .circle.small{
   transition: bottom 1500ms cubic-bezier(0.510, 0.010, 0.550, 1.000),
               right 1500ms cubic-bezier(0.510, 0.010, 0.550, 1.000),
-              transform 1000ms linear,                                /* rotation */
+              transform 500ms linear,                                /* rotation */
               filter 1000ms linear; /* blur */
   /*will-change: transform, filter, bottom, right;*/
 }
