@@ -54,12 +54,6 @@ p, a{
   font-family: 'Objectivity';
   letter-spacing: -2px;
   font-size: 24px;
-  top: 50px;
-  left: 50px;
-  text-decoration: none;
-  color: #FFFCFB;
-  line-height: 18px;
-  position: absolute;
   z-index: 2;
 }
 
@@ -149,7 +143,7 @@ p, a{
 }
 
 #title_main{
-    padding: 10% 0 0 3%;
+    padding: 6% 0 0 3%;
     width: 33%;
     text-align: center;
 }
@@ -189,7 +183,7 @@ p, a{
   text-decoration: none;
   color: #A43F94;
   transition: left 1000ms linear;
-  /*will-change: left, top;*/
+  will-change: left, top;
 }
 
 .menuitem3{
@@ -307,7 +301,7 @@ h1 span{
     position: absolute;
     margin: 0;
     left: -100px;
-    bottom: 310px;
+    bottom: 380px;
     transform: rotate(270deg);
     font-size: 18px;
 }
@@ -315,7 +309,7 @@ h1 span{
 /*menu*/
 
 #menu{
-    padding: 0 7% 0 0;
+    padding: 50px 50px 0;
 }
 
 .topnav-right{
