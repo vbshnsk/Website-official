@@ -336,6 +336,7 @@ h1 span{
 
 .topnav-right{
     float: right;
+    margin-right: 10px;
 }
 
 #cont{
@@ -468,6 +469,29 @@ section{
     padding-right: 15%;
     line-height: 1vw;
     font-size: 0.8375vw;
+  }
+
+  .mirror{
+    position: absolute;
+  }
+
+  .stringlogo{
+    font-family: 'Objectivity';
+    letter-spacing: -2px;
+    font-size: 24px;
+    font-weight: 500;
+    left: 60px;
+    top: 60px;
+    opacity: 0.3;
+    filter: blur(1px);
+  }
+
+  .cont{
+    font-size: 18px;
+    opacity: 0.3;
+    filter: blur(1px);
+    right: 50px;
+    top: 60px;
   }
 
 
