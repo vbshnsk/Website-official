@@ -17,6 +17,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Objectivity';
+    src: url('font/Objectivity-Regular.woff2') format('woff2'),
+        url('font/Objectivity-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 /*effects*/
 .hide{
   left: 300% !important;
@@ -55,6 +65,7 @@ p, a{
   letter-spacing: -2px;
   font-size: 24px;
   z-index: 2;
+  font-weight: 500;
 }
 
 /*Circles*/
@@ -143,7 +154,7 @@ p, a{
 }
 
 #title_main{
-    padding: 6% 0 0 3%;
+    padding: 10% 0 0 3%;
     width: 33%;
     text-align: center;
 }
@@ -301,7 +312,7 @@ h1 span{
     position: absolute;
     margin: 0;
     left: -100px;
-    bottom: 380px;
+    bottom: 320px;
     transform: rotate(270deg);
     font-size: 18px;
 }
@@ -310,6 +321,9 @@ h1 span{
 
 #menu{
     padding: 50px 50px 0;
+    position: absolute;
+    width: calc(100% - 100px);
+    z-index: 99;
 }
 
 .topnav-right{
@@ -397,3 +411,31 @@ section{
   color: #131621;
   text-decoration: none;
 }
+
+/*services*/
+  .dark-bg{
+    width: calc(100% - 100px);
+    height: calc(100% - 185px);
+    background-color: black;
+    opacity: 0.82;
+    padding: 5% 10% 3%;
+  }
+
+  .dark-bg h2{
+    font-family: 'Objectivity';
+    font-size: 64px;
+    line-height: 65px;
+    letter-spacing: -0.08em;
+    color: #FFFCFB;
+    margin-top: 16px;
+    font-weight: normal;
+  }
+
+
+
+
+
+
+
+
+
