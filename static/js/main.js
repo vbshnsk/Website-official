@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!$("#title_main").hasClass("opened")){
             var trans = 0;
             xPercent = event.pageX / $( document ).width() * 100 * 4;
-            trans = (xPercent - 50)/4;
-            backtrans = -(xPercent - 50)/4
+            trans = (xPercent - 50)/2;
+            backtrans = (xPercent - 50)/6;
             var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
             var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
             console.log(angle_big)
