@@ -42,22 +42,34 @@ body, .onepage-wrapper, html {
   text-align: center;
 }
 .onepage-pagination li a{
-  padding: 10px;
+  padding: 10px 9px;
   width: 4px;
   height: 4px;
   display: block;
   
 }
+
+
 .onepage-pagination li a:before{
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: #F2085B;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
+
+
+/*.onepage-pagination li a:after{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid #F2085B;
+  margin-top: -4px;
+  left: 8px;
+}*/
 
 .onepage-pagination li a.active:before{
   width: 10px;
@@ -67,6 +79,21 @@ body, .onepage-wrapper, html {
   margin-top: -4px;
   left: 8px;
 }
+  
+/*digisol pagination*/
+.onepage-pagination li a.active:after{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin-top: -2px;
+  margin-left: -1px;
+  background: #F2085B;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
   overflow: auto;
