@@ -25,7 +25,9 @@
     font-style: normal;
 }
 
-
+*, ::after, ::before {
+  box-sizing: content-box;
+}
 
 /*effects*/
 .hide{
@@ -58,6 +60,11 @@ h1, h2, h3, h4, h5, h6{
 
 p, a{
   font-family: 'Raleway', sans-serif;
+}
+
+a:hover {
+  color: initial;
+  text-decoration: none;
 }
 
 #stringlogo{
@@ -162,6 +169,7 @@ p, a{
 .digisol_header{
     font-weight: 700;
     font-size: 110px;
+    /* font-size: 5.8375vw; */
     letter-spacing: -5px;
     color: white;
     margin: 0;
@@ -385,8 +393,6 @@ h1 span{
 
 section{
   color: white;
-  padding: 50px;
-  height: 100%;
 }
 
 #about-us .halftext{
@@ -414,28 +420,55 @@ section{
 
 /*services*/
   .dark-bg{
-    width: calc(100% - 100px);
-    height: calc(100% - 185px);
-    background-color: black;
-    opacity: 0.82;
-    padding: 5% 10% 3%;
+    background-color: rgba(0, 0, 0, 0.82);
+    padding: 3% 10% 3%;
+    margin: 65px 50px 50px 50px;
   }
 
   .dark-bg h2{
     font-family: 'Objectivity';
-    font-size: 64px;
-    line-height: 65px;
+    font-size: 3vw;
+    line-height: 3vw;
     letter-spacing: -0.08em;
     color: #FFFCFB;
     margin-top: 16px;
+    margin-bottom: 25px;
     font-weight: normal;
+    margin-left: -15px;
   }
 
+  .gradline{
+    margin-left: -12px;
+    width: 100%;
+  }
 
+  #services-text{
+    margin-top: 10%;
+    font-family: 'Raleway', sans-serif;
+  }
 
+  .servicerow{
+    margin-bottom: 3%;
+  }
 
+  .work{
+    justify-content: space-between;
+    margin-bottom: 5%;
+    font-size: 0.8375vw;
+  }
 
+  .workhead{
+    font-weight: 400;
+    font-size: 0.8375vw;
+  }
 
+  .workdesc{
+    margin-top: 6%;
+    font-weight: 200;
+    padding-right: 15%;
+    line-height: 1vw;
+    font-size: 0.8375vw;
+  }
 
 
 

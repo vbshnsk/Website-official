@@ -17,7 +17,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700&display=swap" rel="stylesheet">
 
     <!-- rotate -->
     <script src='{{ url_for("static", filename="js/jQueryRotate.js") }}'></script>
@@ -26,6 +26,9 @@
     <link rel="stylesheet" href='{{ url_for("static", filename="css/onepage-scroll.css") }}'>
     <script src='{{ url_for("static", filename="js/jquery.onepage-scroll.js") }}'></script>
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- custom -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
     <script src='{{ url_for("static", filename="js/main.js") }}'></script>
@@ -33,8 +36,8 @@
 
 <body>
     <div id="circles-bg">
-        <img src="../static/img/radient-circle.png" alt="Circle Big" class="circle big c1">
-        <img src="../static/img/radient-circle.png" alt="Circle Small" class="circle small c1">
+        <img src="../static/img/gradient-circle.png" alt="Circle Big" class="circle big c1">
+        <img src="../static/img/gradient-circle.png" alt="Circle Small" class="circle small c1">
     </div>
     
     <nav id="menu">
@@ -88,6 +91,154 @@
                 <h2>
                     Services and <br> prices
                 </h2>
+                <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+                <div id="services-text">
+                    <div class="row servicerow">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row workhead">
+                                        Website development
+                                    </div>
+                                    <div class="row workdesc">
+                                        We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="row work">
+                                        Landing page 
+                                        <div class="price">1500 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Corporate website
+                                        <div class="price">3500 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Online store
+                                        <div class="price">6000 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Services & Portals
+                                        <div class="price">8000 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Individual
+                                        <div class="price">on request</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col2 -->
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row workhead">
+                                        SMM
+                                    </div>
+                                    <div class="row workdesc">
+                                        Social media management involves so much more than just publishing content. Brands need to utilize these channels to tell their story and engage with their audience.
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="row work">
+                                        Landing page 
+                                        <div class="price">1500 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Corporate website
+                                        <div class="price">3500 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Online store
+                                        <div class="price">6000 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Services & Portals
+                                        <div class="price">8000 $</div>
+                                    </div>
+                                    <div class="row work">
+                                        Individual
+                                        <div class="price">on request</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- row 2 -->
+
+                    <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row workhead">
+                                            SEO
+                                        </div>
+                                        <div class="row workdesc">
+                                            It's not about increasing traffic. It's about increasing the right type of traffic. Our team creates and execute all-inclusive digital marketing and SEO campaigns.
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row work">
+                                            Landing page 
+                                            <div class="price">1500 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Corporate website
+                                            <div class="price">3500 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Online store
+                                            <div class="price">6000 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Services & Portals
+                                            <div class="price">8000 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Individual
+                                            <div class="price">on request</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col2 -->
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row workhead">
+                                            Digital consolting
+                                        </div>
+                                        <div class="row workdesc">
+                                            We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row work">
+                                            Landing page 
+                                            <div class="price">1500 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Corporate website
+                                            <div class="price">3500 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Online store
+                                            <div class="price">6000 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Services & Portals
+                                            <div class="price">8000 $</div>
+                                        </div>
+                                        <div class="row work">
+                                            Individual
+                                            <div class="price">on request</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
         </section>
         <section id="portfolio">

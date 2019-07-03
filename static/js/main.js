@@ -27,17 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
             backtrans = (xPercent - 50)/6;
             var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
             var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
-            console.log(angle_big)
         
             // console.log(Math.abs(angle_big));
             // $(".big").rotate(angle_big - 360 - 45);
             var angle_big_full = angle_big < 0 ? angle_big : -180 - (180 - angle_big);
             var angle_small_full = angle_small < 0 ? angle_small : -180 - (180 - angle_small);
 
-            $(".big").css({"-webkit-transform":"translate(" + backtrans +"px)" + 
-                            "rotate(" + angle_big_full + "deg)"});
-            $(".small").css({"-webkit-transform":"translate(" + trans +"px)" + 
-                            "rotate(" + angle_small_full + "deg)"});
+            $(".big").css({"-webkit-transform":"translate(" + backtrans +"px)" + "rotate(" + angle_big_full + "deg)"});
+            $(".small").css({"-webkit-transform":"translate(" + trans +"px)" + "rotate(" + angle_small_full + "deg)"});
         }
     });
 
