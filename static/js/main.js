@@ -108,10 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //popup contact form window
     $("#cont").click(function(){
-        $("#popup-contact").toggleClass("hidden");
+        $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
       });
     $("#close-pop").click(function(){
-        $("#popup-contact").addClass("hidden");
+        $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm goback");
       });
 
 
