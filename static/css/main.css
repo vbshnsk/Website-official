@@ -29,6 +29,10 @@
   box-sizing: content-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 /*effects*/
 .hide{
   left: 300% !important;
@@ -72,7 +76,6 @@ p, a{
 }
 
 a:hover, a {
-  color: initial;
   text-decoration: none;
 }
 
@@ -309,7 +312,7 @@ a:hover, a {
   backface-visibility: hidden;
   perspective: 1000px;
   animation-iteration-count:infinite;
-}  
+}
 
 @keyframes shake {
   10%, 90% {
@@ -432,7 +435,7 @@ section{
 
 #about-us .halftext{
   max-width: 70%;
-  color: #FFFCFB;       
+  color: #FFFCFB;
   font-size: 24px;
 }
 
@@ -456,7 +459,7 @@ section{
 /*services*/
 .dark-bg{
   background-color: rgba(0, 0, 0, 0.82);
-  padding: 3% 10% 3%;
+  padding: 1% 10% 3%;
   margin: 65px 2% 10% 2%;
 }
 
@@ -478,7 +481,7 @@ section{
 }
 
 #services-text{
-  margin-top: 10%;
+  margin-top: 6%;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -610,7 +613,7 @@ section{
     opacity: 0;
     -webkit-transform: translate3d(0, -60%, 0);
     transform: translate3d(0, -60%, 0);
-    
+
   }
 }
 
@@ -625,7 +628,7 @@ section{
     opacity: 0;
     -webkit-transform: translate3d(0, -60%, 0);
     transform: translate3d(0, -60%, 0);
-    
+
   }
 }
 
@@ -680,6 +683,7 @@ section{
 #popup-contact p{
   font-family: 'Raleway', sans-serif;
   font-size: 0.9vw;
+  font-weight: 200;
 }
 
 #close-pop{
@@ -691,12 +695,10 @@ section{
 
 .textblock .gradline{
   margin: 0;
-  margin-top: 2vw;
   width: 130%;
 }
 
 #popup-contact form{
-  margin-top: 3%;
   position: absolute;
   z-index: 93;
   text-align: center;
@@ -713,19 +715,25 @@ section{
 }
 
 #popup-contact input{
-  border-bottom: 1px solid white;
+  width: 30vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  height: 3vw;
 }
 
 .gradient-border-wrap{
   padding: 10px;
   position: relative;
-  background: linear-gradient(to right, red, purple);
+  height: 3em;
 }
 
 .gradient-border-wrap > input{
    background: #222;
     color: white;
     padding: 8px;
+}
+
+.noborder{
+  border: none !important;
 }
 
 
