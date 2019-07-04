@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
+            // reveal line slide from left
             if (index == 3){
-                // $(".gradline").addClass('animated', 'bounceOutLeft');
+                $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
+                console.log("we got page numba 3")
             }
 
        },   // This option accepts a callback function. The function will be called after the page moves.
