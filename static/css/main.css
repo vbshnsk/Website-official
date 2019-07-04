@@ -563,73 +563,6 @@ section{
 }
 
 /*contact us form pop-up window*/
-#popup-contact{
-  background-color: rgba(0, 0, 0, 0.9);
-  position: fixed;
-  width: 70%;
-  left: 50%;
-  margin-left: -35%;
-  height: 70%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 90;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding: 5%;
-  border: 0.5px solid rgba(255, 255, 255, 0.5);
-}
-
-.ellipsegrad{
-  background: radial-gradient(510.78px at 50.12% 24.5%, rgba(33, 41, 73, 0.5225) 0%, rgba(77, 48, 98, 0.4675) 14.06%, rgba(164, 63, 148, 0.4125) 30.21%, rgba(242, 8, 91, 0.3575) 46.88%, rgba(248, 115, 141, 0.2475) 64.06%, rgba(250, 248, 230, 0.0825) 82.81%, rgba(255, 255, 255, 0) 100%);
-  transform: matrix(1.5, -0.86, 0.87, 0.5, 0, 0);
-  width: 633.05px;
-  height: 946.54px;
-  position: fixed;
-  z-index: 91;
-  top: -500px;
-  left: -50px;
-}
-
-#popup-contact .textblock{
-  z-index: 92;
-  position: relative;
-  width: 66%;
-
-}
-
-#popup-contact h2{
-  font-family: 'Objectivity';
-  font-weight: 400;
-  font-size: 1.9vw;
-}
-
-
-#popup-contact p{
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.9vw;
-}
-
-#close-pop{
-  position: absolute;
-  right: 3%;
-  top: 10%;
-  cursor: pointer;
-}
-
-.textblock .gradline{
-  margin: 0;
-  margin-top: 2vw;
-  width: 130%;
-}
-
-#popup-contact form{
-    margin-top: 3%;
-    position: absolute;
-    z-index: 93;
-    text-align: center;
-}
-
-
 
 @-webkit-keyframes fadeInDownForm {
   from {
@@ -700,6 +633,103 @@ section{
   -webkit-animation-name: fadeInTopForm;
   animation-name: fadeInTopForm;
 }
+
+/*/animations_END*/
+
+#popup-contact{
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 70%;
+  left: 50%;
+  margin-left: -35%;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5%;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.ellipsegrad{
+  background: radial-gradient(510.78px at 50.12% 24.5%, rgba(33, 41, 73, 0.5225) 0%, rgba(77, 48, 98, 0.4675) 14.06%, rgba(164, 63, 148, 0.4125) 30.21%, rgba(242, 8, 91, 0.3575) 46.88%, rgba(248, 115, 141, 0.2475) 64.06%, rgba(250, 248, 230, 0.0825) 82.81%, rgba(255, 255, 255, 0) 100%);
+  transform: matrix(1.5, -0.86, 0.87, 0.5, 0, 0);
+  width: 633.05px;
+  height: 946.54px;
+  position: fixed;
+  z-index: 91;
+  top: -500px;
+  left: -50px;
+}
+
+#popup-contact .textblock{
+  z-index: 92;
+  position: relative;
+  width: 66%;
+
+}
+
+#popup-contact h2{
+  font-family: 'Objectivity';
+  font-weight: 400;
+  font-size: 1.9vw;
+}
+
+
+#popup-contact p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9vw;
+}
+
+#close-pop{
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  cursor: pointer;
+}
+
+.textblock .gradline{
+  margin: 0;
+  margin-top: 2vw;
+  width: 130%;
+}
+
+#popup-contact form{
+  margin-top: 3%;
+  position: absolute;
+  z-index: 93;
+  text-align: center;
+}
+
+#popup-contact input,
+#popup-contact input::placeholder{
+  background-color: transparent;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1vw;
+  font-weight: 300;
+  border: none;
+}
+
+#popup-contact input{
+  border-bottom: 1px solid white;
+}
+
+.gradient-border-wrap{
+  padding: 10px;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+}
+
+.gradient-border-wrap > input{
+   background: #222;
+    color: white;
+    padding: 8px;
+}
+
+
+
 
 
 

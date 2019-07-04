@@ -71,12 +71,18 @@
             <p>We like helping teams relieve the boredom and bring a new blood to their projects. Starting with a brief interview about your product and delving into the subject we come up with decisions based on our team's previous experience.</p>
             <img src="../static/img/gradient-line.png" alt="line" class="gradline">
         </div>
-        <form action="" method="post"> 
-            <input type="text" name="fname" placeholder="Name"><br> 
-            <input type="text" name="lname" placeholder="E-Mail"><br> 
-            <input type="text" name="lname" placeholder="Message"><br>
-            <input id='fileid' type='file' hidden/>
-            <input id='buttonid' type='button' value="Attach file" /><br>
+        <form action="" method="post">
+            <div class="gradient-border-wrap">
+                <input type="text" name="name" placeholder="Name"><br> 
+            </div> 
+            <div class="gradient-border-wrap">
+                <input type="text" name="email" placeholder="E-Mail"><br> 
+            </div>
+            <div class="gradient-border-wrap">
+                <input type="text" name="message" placeholder="Message"><br>
+            </div>
+            <input id='file' type='file' hidden/>
+            <input id='filebtn' type='button' value="Attach file" /><br>
             <input type="submit" value="Send"> 
         </form> 
     </div>
