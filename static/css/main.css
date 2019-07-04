@@ -80,6 +80,27 @@ a:hover {
   font-weight: 500;
 }
 
+/*absolute layer*/
+#footer{
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  position: fixed;
+  bottom: 20px;
+  left: 37px;
+}
+
+#footer a{
+  margin-left: 15px;
+}
+
+#footer a:first-child {
+  margin-left: 30px;
+}
+
+
+
+
 /*Circles*/
 
 #circles-bg{

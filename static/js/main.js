@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // reveal line slide from left
             if (index == 3){
                 $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
-                console.log("we got page numba 3")
             }
 
        },   // This option accepts a callback function. The function will be called after the page moves.
