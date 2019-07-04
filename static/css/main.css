@@ -67,7 +67,7 @@ p, a{
   font-family: 'Raleway', sans-serif;
 }
 
-a:hover {
+a:hover, a {
   color: initial;
   text-decoration: none;
 }
@@ -88,6 +88,10 @@ a:hover {
   position: fixed;
   bottom: 20px;
   left: 37px;
+}
+
+#footer i{
+  color: white;
 }
 
 #footer a{
@@ -449,8 +453,7 @@ section{
 .dark-bg{
   background-color: rgba(0, 0, 0, 0.82);
   padding: 3% 10% 3%;
-  margin: 65px 2% 5% 2%;
-  min-height: 75%;
+  margin: 65px 2% 10% 2%;
 }
 
 .dark-bg h2{
@@ -554,5 +557,75 @@ section{
   -webkit-animation-name: fadeInLeftline;
   animation-name: fadeInLeftline;
 }
+
+/*contact us form pop-up window*/
+#popup-contact{
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 70%;
+  left: 50%;
+  margin-left: -35%;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5%;
+  border: 1px solid white;
+}
+
+.ellipsegrad{
+  background: radial-gradient(510.78px at 50.12% 24.5%, rgba(33, 41, 73, 0.5225) 0%, rgba(77, 48, 98, 0.4675) 14.06%, rgba(164, 63, 148, 0.4125) 30.21%, rgba(242, 8, 91, 0.3575) 46.88%, rgba(248, 115, 141, 0.2475) 64.06%, rgba(250, 248, 230, 0.0825) 82.81%, rgba(255, 255, 255, 0) 100%);
+  transform: matrix(1.5, -0.86, 0.87, 0.5, 0, 0);
+  width: 633.05px;
+  height: 946.54px;
+  position: fixed;
+  z-index: 91;
+  top: -500px;
+  left: -50px;
+}
+
+#popup-contact .textblock{
+  z-index: 92;
+  position: relative;
+  width: 66%;
+
+}
+
+#popup-contact h2{
+  font-family: 'Objectivity';
+  font-weight: 400;
+  font-size: 1.9vw;
+}
+
+
+#popup-contact p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9vw;
+}
+
+#close-pop{
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  cursor: pointer;
+}
+
+.textblock .gradline{
+  margin: 0;
+  width: 130%;
+}
+
+#popup-contact form{
+    position: absolute;
+    z-index: 93;
+    text-align: center;
+}
+
+
+
+
+
 
 

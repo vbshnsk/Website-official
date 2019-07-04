@@ -106,5 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#title_main").removeClass("opened");
     }
 
+    //popup contact form window
+    $("#cont").click(function(){
+        $("#popup-contact").toggleClass("hidden");
+      });
+    $("#close-pop").click(function(){
+        $("#popup-contact").addClass("hidden");
+      });
+
 
 }, false);
