@@ -111,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
       });
     $("#close-pop").click(function(){
-        $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm goback");
+        $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm");
+        setTimeout( function(){ $("#popup-contact").addClass("goback"); }, 1000 );
       });
 
 
