@@ -55,7 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
        },  // This option accepts a callback function. The function will be called before the page moves.
        afterMove: function(index) {
-
+            if (index == 3){
+                // $(".gradline").addClass('animated', 'bounceOutLeft');
+            }
 
        },   // This option accepts a callback function. The function will be called after the page moves.
        loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
