@@ -702,39 +702,84 @@ section{
   position: absolute;
   z-index: 93;
   text-align: center;
+  margin-top: 5%;
 }
 
 #popup-contact input,
-#popup-contact input::placeholder{
+#popup-contact input::placeholder,
+#popup-contact textarea,
+#popup-contact textarea::placeholder
+{
   background-color: transparent;
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 1vw;
   font-weight: 300;
   border: none;
+  resize: none;
 }
 
 #popup-contact input{
   width: 30vw;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   height: 3vw;
 }
 
-.gradient-border-wrap{
-  padding: 10px;
-  position: relative;
-  height: 3em;
+#popup-contact textarea{
+  height: 6vw;
 }
 
-.gradient-border-wrap > input{
-   background: #222;
-    color: white;
-    padding: 8px;
+.tallfield textarea::placeholder{
+  position: relative;
+  bottom: -4vw;
+}
+
+.border-wrap{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 1%;
+  text-align: left;
+}
+
+.border-wrap > input,
+.border-wrap > textarea{
+  color: white;
+  padding: 0 8px;
 }
 
 .noborder{
   border: none !important;
 }
+
+#popup-contact .badborder input,
+#popup-contact .badborder input::placeholder{
+  color: rgb(242, 8, 91) !important;
+}
+
+.badborder{
+  border: 1px solid rgba(242, 8, 91, 0.5) !important;
+}
+
+.badborder:after{
+  content: "";
+  background: url(../img/grad-cross.png);
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  z-index: 93;
+  top: 1vw;
+  right: 1vw;
+}
+
+.badborder:before{
+  content: "";
+  background: url(../img/grad-cross.png);
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  z-index: 93;
+  top: 1vw;
+  right: 1vw;
+}
+
 
 
 
