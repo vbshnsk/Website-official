@@ -120,13 +120,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileInfo = $("#attach-text");
     const realInput = $("#real-input");
 
-    uploadButton.click(function(e) {                    
-       realInput.click();
+    // click on image (clip, or cross on hover)
+    uploadButton.click(function(e) { 
+        // if we pushing on clip (ading file)
+        if ( $("#attach-clip img").hasClass( "addfile" ) )  {
+            realInput.click();
+        }
+        // if we push on red cross (deleting file)
+        else if ( $("#attach-clip img").hasClass( "deletefile" ) ){
+            realInput.val("");
+            $("#attach-text").removeClass("redcol delfileborder")
+            $(".input-file-container").removeClass("delfileborder");
+            $("#attach-clip img").removeClass("deletefile").attr("src","../static/img/file-clip.png").addClass("addfile");
+            fileInfo.text("Attach file")
+        }                 
+       
     }); 
-
+    // Attach file -> filename.ext
     $("#real-input").change(function() {
-        var truncated = $(this).val().split('/').pop().split('\\').pop();
-        fileInfo.text(truncated);
+        if ($(this).val()){
+            var truncated = $(this).val().split('/').pop().split('\\').pop();
+            fileInfo.text(truncated).addClass("bluecol");
+            $("#attach-clip img").attr("src","../static/img/blue-check.png");
+        }
+    });
+    // change blue check to red cross on hover (and add delete file functionality)
+    $(".input-file-container").on({
+            mouseenter: function () {
+                var filename = $("#real-input").val();
+                if (filename){
+                    $("#attach-text").removeClass("bluecol").addClass("redcol");
+                    $(this).addClass("delfileborder");
+                    $("#attach-clip img").removeClass("addfile").addClass("deletefile").attr("src","../static/img/red-cross.png");
+                }
+            },
+            mouseleave: function () {
+                var filename = $("#real-input").val();
+                if (filename){
+                    $("#attach-text").removeClass("redcol delfileborder").addClass("bluecol");
+                    $(this).removeClass("delfileborder");
+                    $("#attach-clip img").removeClass("deletefile").attr("src","../static/img/blue-check.png");
+                }
+            }
     });
 
 }, false);
