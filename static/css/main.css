@@ -749,12 +749,14 @@ section{
 
 input#sendform{
   border: 1px solid #57CA93;
+  color: #57CA93;
   border-radius: 34px;
   width: 130px;
 }
 
 input#sendform:hover{
   border-color: #91dcb8;
+  color: #91dcb8;
 }
 
 #attach-text{
@@ -762,6 +764,7 @@ input#sendform:hover{
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: 300;
+  display: inline-block;
 }
 
 #attach-clip img{
@@ -771,6 +774,9 @@ input#sendform:hover{
   top: -2px;
 }
 
+.input-file-container{
+  margin-top: 20px;
+}
 
 .border-wrap{
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -791,6 +797,28 @@ input#sendform:hover{
 }
 
 
+#popup-contact .okborder input,
+#popup-contact .okborder input::placeholder{
+  color: rgb(87, 202, 147) !important;
+}
+
+.okborder{
+  border-bottom: 1px solid rgba(87, 202, 147, 0.5) !important;
+  /*border-right: none !important;*/
+}
+
+.okborder:after{
+  content: "";
+  background: url(../img/green-check.png);
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 93;
+  top: -28px;
+  display: inline-block;
+  right: -90%;
+}
 
 #popup-contact .badborder input,
 #popup-contact .badborder input::placeholder{
@@ -798,13 +826,13 @@ input#sendform:hover{
 }
 
 .badborder{
-  border: 1px solid rgba(242, 8, 91, 0.5) !important;
-  border-right: none !important;
+  border-bottom: 1px solid rgba(242, 8, 91, 0.5) !important;
+  /*border-right: none !important;*/
 }
 
 .badborder:after{
   content: "";
-  background: url(../img/grad-cross.png);
+  background: url(../img/red-cross.png);
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;

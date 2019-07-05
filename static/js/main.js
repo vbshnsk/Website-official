@@ -115,5 +115,26 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout( function(){ $("#popup-contact").addClass("goback"); }, 1000 );
       });
 
+        // file upload
+    const uploadButton = $("#attach-clip");
+    const fileInfo = $("#attach-text");
+    const realInput = $("#real-input");
+
+    uploadButton.click(function(e) {                    
+       realInput.click();
+    }); 
+
+    $("#real-input").change(function() {
+        var truncated = $(this).val().split('/').pop().split('\\').pop();
+        fileInfo.text(truncated);
+    });
 
 }, false);
+
+
+
+
+
+
+
+
