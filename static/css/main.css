@@ -646,13 +646,12 @@ section{
   width: 70%;
   left: 50%;
   margin-left: -35%;
-  height: 70%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 90;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 5%;
+  padding: 4% 6%;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -700,11 +699,11 @@ section{
 }
 
 #popup-contact form{
-  position: absolute;
+  position: relative;
   z-index: 93;
   text-align: center;
-  margin-top: 5%;
-  width: 85%;
+  margin-top: 15px;
+  width: 88%;
 }
 
 #popup-contact input,
@@ -723,11 +722,11 @@ section{
 
 #popup-contact input{
   width: 95%;
-  height: 50px;
+  height: 40px;
 }
 
 #popup-contact textarea{
-  height: 100px;
+  height: 85px;
   width: 100%;
   padding-top: 10px;
 }
@@ -738,7 +737,7 @@ section{
 
 .tallfield textarea::placeholder{
   position: relative;
-  bottom: -65px;
+  bottom: -55px;
 }
 
 input#sendform{
@@ -798,7 +797,7 @@ input#sendform{
   background-repeat: no-repeat;
   position: absolute;
   z-index: 93;
-  top: 17px;
+  top: 14px;
   left: 35%;
 }
 
