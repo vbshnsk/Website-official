@@ -62,6 +62,8 @@
             <i class="fab fa-github-alt"></i>
         </a>
     </div>
+
+    <!-- CONTACT FORM POP-UP -->
     <div id="popup-contact" style="opacity: 0;" class="goback">
         <div class="ellipsegrad">
         </div>
@@ -71,6 +73,7 @@
             <p>We like helping teams relieve the boredom and bring a new blood to their projects. Starting with a brief interview about your product and delving into the subject we come up with decisions based on our team's previous experience.</p>
             <img src="../static/img/gradient-line.png" alt="line" class="gradline">
         </div>
+
         <form action="" method="post">
             <div class="border-wrap badborder">
                 <input type="text" name="name" placeholder="Name"><br>
@@ -81,11 +84,16 @@
             <div class="border-wrap tallfield">
                 <textarea name="message" placeholder="Message" wrap="soft"></textarea><br>
             </div>
-            <input id='file' type='file' hidden/>
-            <input id='filebtn' type='button' value="Attach file" class="noborder"/><br>
-            <input type="submit" value="Send" class="noborder">
+            <input type="file" name="brif" size="40" class="inputfile" id="resume" accept=".pdf,.doc,.docx,.rtf" aria-invalid="false" hidden/>
+            <div id="attach-text">Attach file<a href="#" id="attach-clip"><img src="../static/img/file-clip.png" alt="clip"></a></div>
+            
+            <br>
+            <input type="submit" value="Send" id="sendform">
         </form>
+
     </div>
+
+    <!-- /CONTACT FORM POP-UP -->
 
     <!-- slides stuff -->
     <div class="main">

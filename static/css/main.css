@@ -124,36 +124,36 @@ a:hover, a {
 }
 
 #circles-bg img.big{
-  height: 80%;
+  height: 90%;
   position: absolute;
 }
 
  #circles-bg img.small{
-  height: 70%;
+  height: 80%;
   position: absolute;
 }
 
 /*SLIDE #1*/
 #circles-bg img.big.c1{
   right: 8%;
-  bottom: -20%;
+  bottom: -15%;
 }
 
 #circles-bg img.small.c1{
   right: -8%;
-  bottom: -30%;
+  bottom: -20%;
 }
 
 /*SLIDE #2*/
 #circles-bg img.big.c2{
   right: 40%;
-  bottom: -20%;
+  bottom: -15%;
   transform: rotate(230deg) !important;
 }
 
 #circles-bg img.small.c2{
   right: 70%;
-  bottom: -30%;
+  bottom: -20%;
   transform: rotate(230deg) !important;
 }
 
@@ -198,7 +198,7 @@ a:hover, a {
 }
 
 #title_main{
-    padding: 10% 0 0 3%;
+    padding: 15% 0 0 3%;
     width: 33%;
     text-align: center;
 }
@@ -389,8 +389,7 @@ h1 span{
 
 #logo{
   margin-bottom: 65px;
-  /*padding-left: 40px;*/
-  width: 120px;
+  width: 110px;
   cursor: pointer;
 }
 
@@ -703,6 +702,7 @@ section{
   z-index: 93;
   text-align: center;
   margin-top: 5%;
+  width: 85%;
 }
 
 #popup-contact input,
@@ -713,30 +713,58 @@ section{
   background-color: transparent;
   color: white;
   font-family: 'Raleway', sans-serif;
-  font-size: 1vw;
+  font-size: 16px;
   font-weight: 300;
   border: none;
   resize: none;
 }
 
 #popup-contact input{
-  width: 30vw;
-  height: 3vw;
+  width: 95%;
+  height: 50px;
 }
 
 #popup-contact textarea{
-  height: 6vw;
+  height: 100px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.tallfield{
+  width: 60% !important;
 }
 
 .tallfield textarea::placeholder{
   position: relative;
-  bottom: -4vw;
+  bottom: -65px;
 }
+
+input#sendform{
+  border: 1px solid #57CA93;
+  border-radius: 34px;
+  width: 20%;
+}
+
+#attach-text{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#attach-clip img{
+  width: 26px;
+  margin-left: 10px;
+  position: relative;
+  top: -2px;
+}
+
 
 .border-wrap{
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   margin-bottom: 1%;
   text-align: left;
+  width: 40%;
 }
 
 .border-wrap > input,
@@ -748,6 +776,8 @@ section{
 .noborder{
   border: none !important;
 }
+
+
 
 #popup-contact .badborder input,
 #popup-contact .badborder input::placeholder{
@@ -761,23 +791,17 @@ section{
 .badborder:after{
   content: "";
   background: url(../img/grad-cross.png);
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
   position: absolute;
   z-index: 93;
-  top: 1vw;
-  right: 1vw;
+  top: 17px;
+  left: 35%;
 }
 
 .badborder:before{
-  content: "";
-  background: url(../img/grad-cross.png);
-  width: 17px;
-  height: 17px;
-  position: absolute;
-  z-index: 93;
-  top: 1vw;
-  right: 1vw;
+
 }
 
 
