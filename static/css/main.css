@@ -735,6 +735,7 @@ section{
   width: 100%;
   padding-top: 10px;
   margin-top: -10px;
+  overflow-y: hidden;
 }
 
 .tallfield{
@@ -779,7 +780,16 @@ input#sendform:hover{
 #attach-clip img.hasfile,
 #attach-clip img.deletefile{
   width: 20px;
-  /*top: -2px;*/
+  border-radius: 50%;
+  padding: 2px;
+}
+
+#attach-clip img.hasfile{
+  border: 1px solid #4192CC;
+}
+
+#attach-clip img.deletefile{
+  border: 1px solid #F2085B;
 }
 
 .input-file-container{

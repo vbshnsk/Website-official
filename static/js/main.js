@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#real-input").change(function() {
         if ($(this).val()){
             var truncated = $(this).val().split('/').pop().split('\\').pop();
+            if(truncated.length > 10) truncated = truncated.substring(0,18) + "...";
             fileInfo.text(truncated).addClass("bluecol");
             $("#attach-clip img").attr("src","../static/img/blue-check.png").addClass("hasfile");
         }
