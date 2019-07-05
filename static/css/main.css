@@ -643,15 +643,16 @@ section{
 #popup-contact{
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  width: 70%;
+  max-width: 1080px;
+  /*min-height: 700px;*/
   left: 50%;
-  margin-left: -35%;
+  margin-left: -540px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 90;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 4% 6%;
+  padding: 4% 6% 20px;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -676,13 +677,13 @@ section{
 #popup-contact h2{
   font-family: 'Objectivity';
   font-weight: 400;
-  font-size: 1.9vw;
+  font-size: 34px;
 }
 
 
 #popup-contact p{
   font-family: 'Raleway', sans-serif;
-  font-size: 0.9vw;
+  font-size: 16px;
   font-weight: 200;
 }
 
@@ -703,7 +704,6 @@ section{
   z-index: 93;
   text-align: center;
   margin-top: 15px;
-  width: 88%;
 }
 
 #popup-contact input,
@@ -729,21 +729,23 @@ section{
   height: 85px;
   width: 100%;
   padding-top: 10px;
+  margin-top: -10px;
 }
 
 .tallfield{
   width: 60% !important;
+  height: 85px !important; 
 }
 
 .tallfield textarea::placeholder{
   position: relative;
-  bottom: -55px;
+  bottom: -45px;
 }
 
 input#sendform{
   border: 1px solid #57CA93;
   border-radius: 34px;
-  width: 20%;
+  width: 130px;
 }
 
 #attach-text{
@@ -766,6 +768,7 @@ input#sendform{
   margin-bottom: 1%;
   text-align: left;
   width: 40%;
+  height: 40px;
 }
 
 .border-wrap > input,
@@ -787,6 +790,7 @@ input#sendform{
 
 .badborder{
   border: 1px solid rgba(242, 8, 91, 0.5) !important;
+  border-right: none !important;
 }
 
 .badborder:after{
@@ -795,10 +799,11 @@ input#sendform{
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  position: absolute;
+  position: relative;
   z-index: 93;
-  top: 14px;
-  left: 35%;
+  top: -28px;
+  display: inline-block;
+  right: -90%;
 }
 
 .badborder:before{
