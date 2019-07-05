@@ -164,6 +164,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
     });
 
+    // form validation
+    $('#contact_name input').on('input', function() {
+        var input=$(this);
+        var is_name=input.val();
+
+        if(is_name){
+            $('#contact_name').removeClass("badborder").addClass("okborder");
+        }
+        else{
+            $('#contact_name').removeClass("okborder").addClass("badborder");
+        }
+    });
+
 }, false);
 
 
