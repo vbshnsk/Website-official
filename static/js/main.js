@@ -165,15 +165,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // form validation
+
+        // name
     $('#contact_name input').on('input', function() {
-        var input=$(this);
-        var is_name=input.val();
+        var input = $(this);
+        var is_name = input.val();
 
         if(is_name){
             $('#contact_name').removeClass("badborder").addClass("okborder");
         }
         else{
             $('#contact_name').removeClass("okborder").addClass("badborder");
+        }
+    });
+
+        // email
+    $('#contact_email input').on('input', function() {
+        var input = $(this);
+        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var is_email = re.test(input.val());
+        if (is_email){
+            $('#contact_email').removeClass("badborder").addClass("okborder");
+        }
+        else{
+            $('#contact_email').removeClass("okborder").addClass("badborder");
         }
     });
 
