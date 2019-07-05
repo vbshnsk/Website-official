@@ -718,6 +718,10 @@ section{
   font-weight: 300;
   border: none;
   resize: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 #popup-contact input{
@@ -739,7 +743,7 @@ section{
 
 .tallfield textarea::placeholder{
   position: relative;
-  bottom: -45px;
+  bottom: -55px;
 }
 
 input#sendform{
