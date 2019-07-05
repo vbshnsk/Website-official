@@ -776,6 +776,12 @@ input#sendform:hover{
   top: -2px;
 }
 
+#attach-clip img.hasfile,
+#attach-clip img.deletefile{
+  width: 20px;
+  /*top: -2px;*/
+}
+
 .input-file-container{
   margin: 10px auto 0px;
   height: 50px;

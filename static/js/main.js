@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             realInput.val("");
             $("#attach-text").removeClass("redcol delfileborder")
             $(".input-file-container").removeClass("delfileborder");
-            $("#attach-clip img").removeClass("deletefile").attr("src","../static/img/file-clip.png").addClass("addfile");
+            $("#attach-clip img").removeClass("deletefile hasfile").attr("src","../static/img/file-clip.png").addClass("addfile");
             fileInfo.text("Attach file")
         }                 
        
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if ($(this).val()){
             var truncated = $(this).val().split('/').pop().split('\\').pop();
             fileInfo.text(truncated).addClass("bluecol");
-            $("#attach-clip img").attr("src","../static/img/blue-check.png");
+            $("#attach-clip img").attr("src","../static/img/blue-check.png").addClass("hasfile");
         }
     });
     // change blue check to red cross on hover (and add delete file functionality)
