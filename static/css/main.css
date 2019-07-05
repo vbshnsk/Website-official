@@ -356,7 +356,7 @@ h1 span{
 #sticky_rotated{
     position: absolute;
     margin: 0;
-    left: -100px;
+    left: -95px;
     bottom: 320px;
     transform: rotate(270deg);
     font-size: 18px;
@@ -388,7 +388,7 @@ h1 span{
 }
 
 #logo{
-  margin-bottom: 65px;
+  margin-bottom: 70px;
   width: 110px;
   cursor: pointer;
 }

@@ -76,13 +76,16 @@
 
         <form action="" method="post">
             <div class="border-wrap badborder">
-                <input type="text" name="name" placeholder="Name"><br>
+                <input type="text" name="name" placeholder="Name" onfocus="this.placeholder = ''"
+onblur="this.placeholder = 'Name'"><br>
             </div>
             <div class="border-wrap">
-                <input type="text" name="email" placeholder="E-Mail"><br>
+                <input type="text" name="email" placeholder="E-Mail" onfocus="this.placeholder = ''"
+onblur="this.placeholder = 'E-Mail'"><br>
             </div>
             <div class="border-wrap tallfield">
-                <textarea name="message" placeholder="Message" wrap="soft"></textarea><br>
+                <textarea name="message" onfocus="this.placeholder = ''"
+onblur="this.placeholder = 'Message'" placeholder="Message" wrap="soft"></textarea><br>
             </div>
             <input type="file" name="brif" size="40" class="inputfile" id="resume" accept=".pdf,.doc,.docx,.rtf" aria-invalid="false" hidden/>
             <div id="attach-text">Attach file<a href="#" id="attach-clip"><img src="../static/img/file-clip.png" alt="clip"></a></div>
