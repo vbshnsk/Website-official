@@ -899,6 +899,17 @@ input#sendform:hover{
 
 /*portfolio*/
 
+#portfolio .title{
+  padding: 2% 0 0 5%;
+  margin-bottom: -115px;
+}
+
+
+#portfolio h2{
+  font-weight: normal;
+  font-size: 45px;
+}
+
 .portfolio-bg{
     background-color: rgba(0, 0, 0, 0.82);
     padding: 1% 0 3%;
@@ -908,13 +919,15 @@ input#sendform:hover{
 .portfolio-item{
   height: 100%;
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .part3, .part6{
   display: inline-block;
   height: 100%;
   text-align: initial;
-  
+  box-sizing: border-box;
 }
 
 .part3{
@@ -933,8 +946,36 @@ input#sendform:hover{
 }
 
 .part3.description{
-  background: radial-gradient(1940.03px at -11.69% -55.79%, rgba(242, 8, 91, 0.76) 0%, rgba(33, 41, 73, 0.76) 45.31%, rgba(255, 250, 195, 0.76) 100%);
   opacity: 0.9;
+  padding: 15% 7% 5% 3%;
+}
+
+.description.yellow{
+  background: rgba(216, 179, 106, 0.85);
+}
+
+.description.blue{
+  background: rgba(95, 134, 207, 0.85);
+}
+
+.description.red{
+  background: rgba(235, 90, 85, 0.85);
+}
+
+#portfolio .description .gradline{
+  margin: 0;
+}
+
+.description h4{
+  font-family: 'Objectivity';
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.description p{
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 200;
 }
   
 /*items*/
