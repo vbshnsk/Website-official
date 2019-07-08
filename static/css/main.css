@@ -901,7 +901,7 @@ input#sendform:hover{
 
 #portfolio .title{
   padding: 2% 0 0 5%;
-  margin-bottom: -115px;
+  margin-bottom: -11vh;
 }
 
 
@@ -912,7 +912,6 @@ input#sendform:hover{
 
 .portfolio-bg{
     background-color: rgba(0, 0, 0, 0.82);
-    padding: 1% 0 3%;
     margin: 65px 2% 10% 2%;
 }
 
@@ -946,7 +945,6 @@ input#sendform:hover{
 }
 
 .part3.description{
-  opacity: 0.9;
   padding: 15% 7% 5% 3%;
 }
 
@@ -977,13 +975,24 @@ input#sendform:hover{
   font-size: 14px;
   font-weight: 200;
 }
+
+.description .line{
+  width: 100%;
+  height: 2px;
+}
   
 /*items*/
 .yana{
   background: url(../img/portfolio/thumbnails/yana.jpg);
 }
 
+.leafus{
+  background: url(../img/portfolio/thumbnails/leafus.jpg);
+}
 
+.bari{
+  background: url(../img/portfolio/thumbnails/bari.jpg);
+}
 
 
 
