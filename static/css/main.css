@@ -642,6 +642,9 @@ section{
 
 /*/animations_END*/
 
+
+/*pop-up contact form*/
+
 #popup-contact{
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -876,12 +879,21 @@ input#sendform:hover{
 }
 
 .badborder:before{
-
+  /*check if we need this*/
 }
 
 .delfileborder{
   border: 1px solid #F2085B;
   border-radius: 34px;
+}
+
+/*/popup*/
+
+/*scrollable div*/
+
+.scrollable{
+  height: 70%;
+  overflow-y: auto;
 }
 
 
