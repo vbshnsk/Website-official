@@ -481,6 +481,7 @@ section{
 .gradline{
   margin-left: -12px;
   width: 100%;
+  height: 2px;
 }
 
 #services-text{
@@ -894,20 +895,21 @@ input#sendform:hover{
 .scrollable{
   height: 90%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
 /*portfolio*/
 
 #portfolio .title{
-  padding: 2% 0 0 5%;
-  margin-bottom: -11vh;
+  padding: 25px 0 0 5%;
+  margin-bottom: -100px
 }
 
 
 #portfolio h2{
   font-weight: normal;
-  font-size: 45px;
+  font-size: 54px;
 }
 
 .portfolio-bg{
@@ -997,7 +999,7 @@ input#sendform:hover{
 
 
 /*
- *  STYLE 7
+ *  scroll bar style
  */
 
  .coolscroll:-webkit-scrollbar-track
