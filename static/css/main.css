@@ -1076,15 +1076,15 @@ input#sendform:hover{
   }
   
   #circles-bg img.big.c1{
-    right: -30%;
-    bottom: 20%;
-    height: 40%;
+    right: -20px;
+    bottom: 120px;
+    height: 320px;
   }
 
   #circles-bg img.small.c1{
-    right: -50%;
-    bottom: 5%;
-    height: 40%;
+    right: -100px;
+    bottom: 20px;
+    height: 320px;
   }
 
   #stringlogo {
