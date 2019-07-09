@@ -33,6 +33,10 @@
     outline: none;
 }
 
+.mobile{
+  display: none;
+}
+
 /*effects*/
 .hide{
   left: 300% !important;
@@ -1034,6 +1038,10 @@ input#sendform:hover{
   /* smooth scroll fix */
   html, body {
     overflow: visible !important;
+  }
+
+  .mobile{
+    display: initial;
   }
   
   #cont, #sticky_rotated, .digisol-item-pair {
