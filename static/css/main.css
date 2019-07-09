@@ -37,6 +37,10 @@
   display: none;
 }
 
+.desktop{
+  display: initial;
+}
+
 /*effects*/
 .hide{
   left: 300% !important;
@@ -1043,6 +1047,10 @@ input#sendform:hover{
   .mobile{
     display: initial;
   }
+
+  .desktop{
+    display: none;
+  }
   
   #cont, #sticky_rotated, .digisol-item-pair {
       display: none;
@@ -1051,6 +1059,10 @@ input#sendform:hover{
   #menu {
       padding: 50px 15px 0;
       width: calc(100% - 30px);
+  }
+
+  #mobile-menu-burger img{
+    margin-top: -5px;
   }
 
   #title_main {
@@ -1091,7 +1103,38 @@ input#sendform:hover{
     letter-spacing: -2px;
     font-size: 32px;
     font-weight: 500;
-}
+  }
+  
+  #mobile-menu{
+    height: 100%;
+    width: 78%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 9;
+    transition: transform 250ms cubic-bezier(0.510, 0.010, 0.550, 1.000);
+  }
+
+  #mobile-menu ul{
+    list-style-type: none;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: right;
+    color: #FFFCFB;
+    padding: 50% 20px;
+  }
+
+  #mobile-menu a { color: inherit; } 
+
+  #mobile-menu li.active:before{
+    content: "• ";
+    font-size: 35px;
+    vertical-align: bottom;
+  }
+
+
 
 }
 

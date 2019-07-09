@@ -193,8 +193,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-        // scrollable div
+        // mobile menu
 
+    $("#mobile-menu-burger").on( "click", function() {
+        if ($("#mobile-menu-burger img").hasClass("open")){
+            $("#mobile-menu-burger img").removeClass("open").attr("src","../static/img/burger.png")
+            $("#mobile-menu").css({"-webkit-transform":"translate(-100%)"})
+        }
+        else{
+            $("#mobile-menu-burger img").addClass("open").attr("src","../static/img/close-menu.png")
+            $("#mobile-menu").css({"-webkit-transform":"translate(0%)"})
+        }
+    });
 
 }, false);
 
