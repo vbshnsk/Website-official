@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             backtrans = (xPercent - 50)/6;
             var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
             var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
-        
+
             // console.log(Math.abs(angle_big));
             // $(".big").rotate(angle_big - 360 - 45);
             var angle_big_full = angle_big <= 0 ? angle_big : -180 - (180 - angle_big);
@@ -84,11 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // close digisol menu when clicked somewhere on 1st slide
-    $('html').click(function(e) {                    
+    $('html').click(function(e) {
        if($(e.target).is("#slider")){
             closeMenu();
        }
-    }); 
+    });
     // close digisol menu when "escape" key pushed
     $(document).keyup(function(e) {
          if (e.key === "Escape") { // escape key maps to keycode `27`
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const realInput = $("#real-input");
 
     // click on image (clip, or cross on hover)
-    uploadButton.click(function(e) { 
+    uploadButton.click(function(e) {
         // if we pushing on clip (ading file)
         if ( $("#attach-clip img").hasClass( "addfile" ) )  {
             realInput.click();
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $(".input-file-container").removeClass("delfileborder");
             $("#attach-clip img").removeClass("deletefile hasfile").attr("src","../static/img/file-clip.png").addClass("addfile");
             fileInfo.text("Attach file")
-        }                 
-       
-    }); 
+        }
+
+    });
     // Attach file -> filename.ext
     $("#real-input").change(function() {
         if ($(this).val()){
@@ -206,11 +206,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // close mobile menu when clicked somewhere else
-    // $('html').click(function(e) {                    
+    // $('html').click(function(e) {
     //    if(!$(e.target).not("#mobile-menu")){
     //         closeMobileMenu()
     //    }
-    // }); 
+    // });
 
 
     function closeMobileMenu(){
