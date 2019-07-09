@@ -1030,10 +1030,60 @@ input#sendform:hover{
 
 /*mobile version*/
 @media screen and (max-width: 768px) {
+
+  /* smooth scroll fix */
   html, body {
     overflow: visible !important;
   }
+  
+  #cont, #sticky_rotated, .digisol-item-pair {
+      display: none;
+  }
 
+  #menu {
+      padding: 50px 15px 0;
+      width: calc(100% - 30px);
+  }
+
+  #title_main {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 0;
+  }
+
+  #logo{
+    position: absolute;
+    top: 50%;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 0;
+    width: 84px;
+    margin-left: -42px;
+  }
+
+  /*temporary*/
+  #footer{
+    display: none;
+  }
+  
+  #circles-bg img.big.c1{
+    right: -30%;
+    bottom: 20%;
+    height: 40%;
+  }
+
+  #circles-bg img.small.c1{
+    right: -50%;
+    bottom: 5%;
+    height: 40%;
+  }
+
+  #stringlogo {
+    letter-spacing: -2px;
+    font-size: 32px;
+    font-weight: 500;
+}
 
 }
 
