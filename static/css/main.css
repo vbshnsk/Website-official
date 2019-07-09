@@ -1028,3 +1028,15 @@ input#sendform:hover{
  
 
 
+/*mobile version*/
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow: visible !important;
+  }
+
+
+
+
+  
+}
+
