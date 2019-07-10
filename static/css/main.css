@@ -1124,7 +1124,7 @@ input#sendform:hover{
 
   #cont, #sticky_rotated, 
   .digisol-item-pair, .empty,
-  .description .line {
+  .description .line, .ellipsegrad {
       display: none;
   }
 
@@ -1400,6 +1400,29 @@ input#sendform:hover{
     margin-top: 0;
     font-size: 12px;
   }
+
+  #popup-contact{
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+    padding: 30% 10%;
+  }
+
+  #popup-contact p {
+      font-size: 12px;
+  }
+
+  #popup-contact h2 {
+    font-size: 24px;
+  }
+
+  #popup-contact .textblock {
+      width: 90%;
+  }
+
+  .border-wrap {
+    width: 100%;
+}
 
 
   

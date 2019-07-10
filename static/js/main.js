@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //popup contact form window
-    $("#cont").click(function(){
+    $("#cont, #cont-mobile").click(function(){
         $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
       });
     $("#close-pop").click(function(){
@@ -227,17 +227,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // smooth scroll
 
       $('#mobile-menu a[href*="#"]').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 500);
-            closeMobileMenu()
-            return false;
+          if ( !$(this).hasClass("no-smooth-scroll") ){
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html,body').animate({
+                    scrollTop: target.offset().top
+                  }, 500);
+                  closeMobileMenu()
+                  return false;
+                }
+              }
           }
-        }
+          else if ( $(this).hasClass("no-smooth-scroll") ){
+            $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
+          }
       });
 
 
