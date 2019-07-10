@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // detect screen size
+    var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
 	// circle rotation
     $(".big").rotate(-45);
     $(".small").rotate(-45);
@@ -18,9 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var centerX_small = offset_small.left + width_small / 2;
     var centerY_small = offset_small.top + height_small / 2;
 
-
     $('#slider').mousemove(function(event) {
-        if (!$("#title_main").hasClass("opened")){
+        if ( (!$("#title_main").hasClass("opened")) && !isMobile ){
             var trans = 0;
             xPercent = event.pageX / $( document ).width() * 100 * 4;
             trans = (xPercent - 50)/2;
@@ -28,13 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
             var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
 
-            // console.log(Math.abs(angle_big));
-            // $(".big").rotate(angle_big - 360 - 45);
             var angle_big_full = angle_big <= 0 ? angle_big : -180 - (180 - angle_big);
             var angle_small_full = angle_small <= 0 ? angle_small : -180 - (180 - angle_small);
 
-            $(".big").css({"-webkit-transform":"translate(" + backtrans +"px)" + "rotate(" + angle_big_full + "deg)"});
-            $(".small").css({"-webkit-transform":"translate(" + trans +"px)" + "rotate(" + angle_small_full + "deg)"});
+            $(".big").css({"-webkit-transform":"translate(" + backtrans + "px)" + "rotate(" + angle_big_full + "deg)"});
+            $(".small").css({"-webkit-transform":"translate(" + trans + "px)" + "rotate(" + angle_small_full + "deg)"});
         }
     });
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // close digisol menu when "escape" key pushed
     $(document).keyup(function(e) {
-         if (e.key === "Escape") { // escape key maps to keycode `27`
+        if (e.key === "Escape") { // escape key maps to keycode `27`
             closeMenu();
         }
     });
