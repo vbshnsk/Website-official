@@ -459,12 +459,12 @@ section{
 }
 
 #about-us .description{
-   width: 500px;
+   width: 33%;
    height: 140px;
 }
 
 #about-us .gradline{
-  width: 500px; 
+  width: 100%; 
   padding-bottom: 35px;
   padding-top: 0;
 }
@@ -1090,7 +1090,7 @@ input#sendform:hover{
 
   /* smooth scroll fix */
   html, body {
-    overflow: visible !important;
+    overflow-y: visible !important;
   }
 
   .mobile{
