@@ -445,7 +445,7 @@ section{
 }
 
 #about-us h2{
-  margin-top: 85px;
+  margin-top: 5%;
 }
 
 #about-us .halftext{
@@ -459,8 +459,8 @@ section{
 }
 
 #about-us .description{
+   min-width: 400px;
    width: 33%;
-   height: 140px;
 }
 
 #about-us .gradline{
@@ -475,7 +475,7 @@ section{
 }
 
 #whatwedo a{
-  padding: 17px 45px;
+  padding: 1.5% 3%;
   border-radius: 35px;
   font-size: 18px;
   line-height: 20px;
@@ -499,19 +499,25 @@ section{
 }
 
 .imgrow{
-  margin-top: 50px;
+  margin-top: 3.5%;
 }
 
 .imgrow .break1{
-  margin: 0 80px;
+  margin: 0 5.7%;
 }
 
 .imgrow .break2{
-  margin: 0 130px;
+  margin: 0 9%;
+}
+
+.imgrow img{
+  position: relative;
+  width: 13.5%;
 }
 
 #bari{
-  margin: 0 55px;
+  margin: 0 3.8%;
+  width: 6%;
 }
 
 /*services*/
