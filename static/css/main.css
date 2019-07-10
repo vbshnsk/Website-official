@@ -1093,7 +1093,8 @@ input#sendform:hover{
 
   /* smooth scroll fix */
   html, body {
-    overflow-y: scroll; /* has to be scroll, not auto */
+    overflow-y: scroll !important; /* has to be scroll, not auto */
+    overflow-x: hidden !important;
     /*-webkit-overflow-scrolling: touch;*/
   }
 
