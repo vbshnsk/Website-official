@@ -1187,6 +1187,10 @@ input#sendform:hover{
     font-size: 35px;
     vertical-align: bottom;
   }
-
+  
+  #about-us .description {
+    min-width: 100px;
+    width: 33%;
+  }
 }
 
