@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
@@ -51,6 +54,9 @@
         </a>
         <div class="topnav-right">
             <a id="cont" >contact</a>
+            <a id="mobile-menu-burger" class="mobile close">
+                <img src="../static/img/burger.png" alt="menu burger">
+            </a>
         </div>
     </nav>
     <div id="footer">
@@ -98,6 +104,28 @@
     </div>
 
     <!-- /CONTACT FORM POP-UP -->
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile" style="-webkit-transform:translate(-100%)">
+        <ul>
+            <li class="active">
+                <a href="#slider">MAIN PAGE</a>
+            </li>
+            <li>
+                <a href="#about-us">ABOUT US</a>
+            </li>
+            <li>
+                <a href="#portfolio">PORTFOLIO</a>
+            </li>
+            <li>
+                <a href="#services">SERVICES</a>
+            </li>
+            <li>
+                <a href="#contact">CONTACT</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /Mobile menu -->
 
     <!-- slides stuff -->
     <div class="main">
