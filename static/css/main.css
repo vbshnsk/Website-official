@@ -1096,7 +1096,7 @@ input#sendform:hover{
 
   /* smooth scroll fix */
   html, body {
-    overflow-y: visible !important;
+    overflow: visible !important;
   }
 
   .mobile{
