@@ -1180,7 +1180,7 @@ input#sendform:hover{
     text-align: right;
     color: #FFFCFB;
     height: 100%;
-    padding: 50% 20px;
+    padding: 100% 20px;
   }
 
   #mobile-menu a { color: inherit; }
