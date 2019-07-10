@@ -1082,12 +1082,7 @@ input#sendform:hover{
  .coolscroll::-webkit-scrollbar-thumb
  {
    border-radius: 10px;
-   background-image: -webkit-gradient(linear,
-                      left bottom,
-                      left top,
-                      color-stop(0.44, #212949),
-                      color-stop(0.72,#A43F94),
-                      color-stop(0.86,#F8738D));
+   background-color: #A43F94;
  }
 
 /*
