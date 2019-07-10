@@ -1095,7 +1095,7 @@ input#sendform:hover{
   html, body {
     overflow-y: scroll !important; /* has to be scroll, not auto */
     overflow-x: hidden !important;
-    /*-webkit-overflow-scrolling: touch;*/
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile{
