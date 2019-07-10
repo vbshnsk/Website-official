@@ -11,7 +11,7 @@
 	- About Us slider
 	- ~Our Works (page)~
 	- ~Services (page)~
-	- Contact Pop-up
+	- ~Contact Pop-up~
     - landscape view selector styles
 
 

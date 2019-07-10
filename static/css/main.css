@@ -1237,7 +1237,7 @@ input#sendform:hover{
   .dark-bg {
     margin: 0 5%;
     padding: 11%;
-    height: 100em;
+    height: 95em;
 }
 
   .hidden{
@@ -1354,7 +1354,7 @@ input#sendform:hover{
   }
 
   #services{
-    height: 700px !important
+    height: 600px !important;
   }
 
   #services-text {
