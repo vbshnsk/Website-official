@@ -89,7 +89,7 @@ a:hover, a {
 
 #stringlogo{
   font-family: 'Objectivity';
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-size: 24px;
   z-index: 2;
   font-weight: 600;
@@ -516,6 +516,17 @@ section{
 .imgrow img{
   position: relative;
   width: 13.5%;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.5s ease !important;
+}
+
+.imgrow img:hover{
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0) !important;
+  -moz-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+  opacity: 1 !important;
 }
 
 #bari{
@@ -1195,5 +1206,6 @@ input#sendform:hover{
     min-width: 100px;
     width: 33%;
   }
+
 }
 
