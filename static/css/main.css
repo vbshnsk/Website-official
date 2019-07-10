@@ -1167,13 +1167,19 @@ input#sendform:hover{
     left: 1.2em;
 }
 
-  #circles-bg img.big.c1{
+  #circles-bg img.big.c1,
+  #circles-bg img.big.c2,
+  #circles-bg img.big.c3,
+  #circles-bg img.big.c4{
     right: -20px;
     bottom: 120px;
     height: 320px;
   }
 
-  #circles-bg img.small.c1{
+  #circles-bg img.small.c1,
+  #circles-bg img.small.c2,
+  #circles-bg img.small.c3,
+  #circles-bg img.small.c4{
     right: -100px;
     bottom: 20px;
     height: 320px;
@@ -1421,9 +1427,32 @@ input#sendform:hover{
   }
 
   .border-wrap {
-    width: 100%;
-}
+    width: 80%;
+    height: 10%;
+  }
 
+  #popup-contact form {
+    margin-top: 5%;
+  }
+
+  .tallfield {
+    width: 80% !important;
+    height: 20% !important;
+  }
+
+  #popup-contact textarea {
+      margin-top: -17px;
+  }
+
+  .input-file-container {
+    margin: 0px auto;
+    height: 7%;
+  }
+
+  #close-pop {
+    right: 10%;
+    top: 17%;
+  }
 
   
 

@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     $("#close-pop").click(function(){
         $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm");
+        $("#mobile-menu-burger").show()
         setTimeout( function(){ $("#popup-contact").addClass("goback"); }, 1000 );
       });
 
@@ -242,6 +243,9 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           else if ( $(this).hasClass("no-smooth-scroll") ){
             $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
+            $("#mobile-menu-burger").hide()
+            $("#close-pop img").attr("src","../static/img/close-menu.png")
+            closeMobileMenu()
           }
       });
 
