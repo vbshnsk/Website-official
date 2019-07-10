@@ -1175,6 +1175,7 @@ input#sendform:hover{
     line-height: 60px;
     text-align: right;
     color: #FFFCFB;
+    height: 100%;
     padding: 50% 20px;
   }
 

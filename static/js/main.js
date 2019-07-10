@@ -206,11 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // close mobile menu when clicked somewhere else
-    // $('html').click(function(e) {
-    //    if(!$(e.target).not("#mobile-menu")){
-    //         closeMobileMenu()
-    //    }
-    // });
+    $('html').on( "click", function(e) {
+       if( !$(e.target).is("#mobile-menu, #mobile-menu *") ){
+            if( !$(e.target).parents("#mobile-menu-burger").is("#mobile-menu-burger") ){
+                closeMobileMenu()
+                console.log("dick") 
+            }
+       }
+    });
 
 
     function closeMobileMenu(){
