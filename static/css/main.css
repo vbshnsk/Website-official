@@ -1160,8 +1160,10 @@ input#sendform:hover{
   }
 
   #mobile-menu{
-    height: 100%;
+    /*header height = 68px*/
+    height: calc(100% + 68px);
     width: 78%;
+    top: -68px; 
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     z-index: 9;
