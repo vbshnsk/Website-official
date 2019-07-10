@@ -110,7 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     $("#close-pop").click(function(){
         $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm");
-        $("#mobile-menu-burger").show()
+        if (isMobile){
+            $("#mobile-menu-burger").show()
+        }
         setTimeout( function(){ $("#popup-contact").addClass("goback"); }, 1000 );
       });
 
