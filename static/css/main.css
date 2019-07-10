@@ -1157,10 +1157,13 @@ input#sendform:hover{
     margin-left: -42px;
   }
 
-  /*temporary*/
-  #footer{
-    display: none;
-  }
+  #footer {
+    font-size: 3.3vw;
+     font-weight: 500;
+    bottom: 20px;
+    position: absolute;
+    left: 1.2em;
+}
 
   #circles-bg img.big.c1{
     right: -20px;
@@ -1246,13 +1249,14 @@ input#sendform:hover{
   .imgrow{
     width: 100%;
     margin-top: 0%;
+    text-align: center;
   }
 
   .imgrow img {
       position: relative;
       left: 0%;
-      width: 100%;
-      margin: 15px 0%;
+      width: 46%;
+      margin: 50px 0%;
       filter: grayscale(100%);
       opacity: 0.5;
       transition: all 0.5s ease !important;
@@ -1308,13 +1312,32 @@ input#sendform:hover{
     margin: 0 2% 10% 2%;
   }
 
-  .client_logo:not(.child1){
+  .client_logo:not(.child0):not(.child1){
     display: none;
+  }
+
+  .child0{
+    padding-right: 5px;
+  }
+
+  .child1{
+    padding-left: 5px;
+  }
+
+  .child0:before{
+
+  }
+
+  .child1:after{
+
   }
 
   #services{
     height: 700px !important
   }
+
+/*use this*/
+/*@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {}*/
 
 }
 

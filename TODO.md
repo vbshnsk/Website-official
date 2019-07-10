@@ -1,16 +1,16 @@
-###General 
+###General
 	- b&w hover on clients
 
 ###Desktop (>=1280px)
 	-  buttons on last page
-	
-	
+
+
 
 ###Mobile (<= 768px)
 	- smooth scroll on iOS
-	- About Us (page)
+	- About Us slider
 	- Our Works (page)
-	- Services (page)
+	- ~Services (page)~
 	- Contact Pop-up
 
 
