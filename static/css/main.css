@@ -444,27 +444,74 @@ section{
   color: white;
 }
 
+#about-us h2{
+  margin-top: 85px;
+}
+
 #about-us .halftext{
-  max-width: 70%;
-  color: #FFFCFB;
-  font-size: 24px;
+  font-family: Raleway, normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.06em;
+  color: #FFFCFB; 
+  margin-left: -12px;
+}
+
+#about-us .description{
+   width: 500px;
+   height: 140px;
+}
+
+#about-us .gradline{
+  width: 500px; 
+  padding-bottom: 35px;
+  padding-top: 0;
 }
 
 #whatwedo{
   margin-top: 50px;
-  text-align: right;
+  text-align: left;
 }
 
 #whatwedo a{
-  padding: 15px 25px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-family: 'Raleway', sans-serif;
-  background-color: #F8738D;
-  font-weight: 700;
-  border: none;
-  color: #131621;
+  padding: 17px 45px;
+  border-radius: 35px;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: 'Raleway', normal;
+  font-weight: 400;
+  border: 1px solid white;
   text-decoration: none;
+  color: #FFFCFB;
+}
+
+#about-us h3{
+  position: relative;
+  margin-top: 80px;  
+  right: 12px;
+  font-family: Raleway, normal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.06em;
+}
+
+.imgrow{
+  margin-top: 50px;
+}
+
+.imgrow .break1{
+  margin: 0 80px;
+}
+
+.imgrow .break2{
+  margin: 0 130px;
+}
+
+#bari{
+  margin: 0 55px;
 }
 
 /*services*/
