@@ -1113,6 +1113,7 @@ input#sendform:hover{
   #menu {
       padding: 50px 15px 0;
       width: calc(100% - 30px);
+      position: relative;
   }
 
   #mobile-menu-burger img{
@@ -1130,7 +1131,7 @@ input#sendform:hover{
     position: absolute;
     top: 50%;
     height: 120px;
-    margin-top: -60px;
+    margin-top: -128px; /*-60 as a half of heght and -68 heaight of menu*/
     margin-bottom: 0;
     width: 84px;
     margin-left: -42px;
