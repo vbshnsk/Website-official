@@ -1376,6 +1376,11 @@ input#sendform:hover{
     margin: 0;
   }
 
+  #about-us .gradline {
+    min-width: inherit;
+    width: 100%;
+}
+
   .portfolio-item{
     margin-top: 5%;
     flex-direction: column;
