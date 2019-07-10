@@ -1204,7 +1204,25 @@ input#sendform:hover{
   
   #about-us .description {
     min-width: 100px;
-    width: 33%;
+    width: 100%;
+  }
+
+  #about-us h2{
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  .dark-bg{
+    margin: 10% 5%;
+    padding: 10%;
+  }
+
+  .hidden{
+    visibility: visible !important;
+  }
+
+  #whatwedo a {
+    padding: 20px 30px;
   }
 
 }
