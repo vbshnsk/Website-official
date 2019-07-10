@@ -1122,7 +1122,9 @@ input#sendform:hover{
     display: none;
   }
 
-  #cont, #sticky_rotated, .digisol-item-pair {
+  #cont, #sticky_rotated, 
+  .digisol-item-pair, .empty,
+  .description .line {
       display: none;
   }
 
@@ -1159,8 +1161,8 @@ input#sendform:hover{
 
   #footer {
     font-size: 3.3vw;
-     font-weight: 500;
-    bottom: 20px;
+    font-weight: 500;
+    bottom: 15px;
     position: absolute;
     left: 1.2em;
 }
@@ -1217,11 +1219,13 @@ input#sendform:hover{
   #about-us .description {
     min-width: 100px;
     width: 100%;
+    margin-top: 5%;
   }
 
   #about-us h2{
     font-size: 36px;
     font-weight: 300;
+    margin-bottom: 20%;
   }
 
   .dark-bg {
@@ -1256,7 +1260,6 @@ input#sendform:hover{
       position: relative;
       left: 0%;
       width: 46%;
-      margin: 50px 0%;
       filter: grayscale(100%);
       opacity: 0.5;
       transition: all 0.5s ease !important;
@@ -1277,6 +1280,7 @@ input#sendform:hover{
   .dark-bg h2 {
     font-size: 36px;
     line-height: 40px;
+    margin-bottom: 20%;
   }
 
   .servicerow{
@@ -1297,6 +1301,10 @@ input#sendform:hover{
     margin-top: 11%;
   }
 
+  .workhead:first-child{
+      margin-top: 5%;
+  }
+
   .workdesc{
       display: block;
       margin-bottom: 10%;
@@ -1306,10 +1314,17 @@ input#sendform:hover{
   #portfolio{
     top: 60em !important;
     margin-top: 15%;
+    height: auto;
   }
 
   .portfolio-bg{
-    margin: 0 2% 10% 2%;
+    margin: 0 5%;
+    padding: 11%;
+  }
+
+  .portfolio-bg > *{
+    margin-right: -15px;
+    margin-left: -15px;
   }
 
   .client_logo:not(.child0):not(.child1){
@@ -1335,6 +1350,59 @@ input#sendform:hover{
   #services{
     height: 700px !important
   }
+
+  #services-text {
+    margin-top: 0;
+  }
+
+  #portfolio h2 {
+      font-weight: normal;
+      font-size: 36px;
+      margin-bottom: 20%;
+  }
+
+  #portfolio .title {
+    padding: 0;
+    margin-bottom: 0px;
+  }
+
+  #portfolio  .gradline{
+    margin: 0;
+  }
+
+  .portfolio-item{
+    margin-top: 5%;
+    flex-direction: column;
+    border-bottom: 20px solid transparent;
+  }
+
+  .empty.part3{
+    display: none;
+  }
+
+  .part3, .part6{
+    display: initial;
+    width: 100%;
+  }
+
+  .part3.description {
+    padding: 10% 10% 0;
+    height: 60%;
+    /* description always first on mobile */
+    order: -1;     
+  }
+
+  .scrollable {
+    height: auto;
+  }
+
+  .description p{
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+
+  
 
 /*use this*/
 /*@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {}*/

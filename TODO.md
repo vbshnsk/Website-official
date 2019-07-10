@@ -12,6 +12,7 @@
 	- Our Works (page)
 	- ~Services (page)~
 	- Contact Pop-up
+    - landscape view selector styles
 
 
 ###Tablet ( 1280px < > 768px)
