@@ -270,12 +270,14 @@ document.addEventListener('DOMContentLoaded', function() {
     $(document).scroll(function(e){
           var scrollAmount = $(window).scrollTop();
           var documentHeight = $(document).height();
-          var windowHeight = $(window).height();
+          var windowHeight = window.innerHeight;
 
           var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
           var roundScroll = Math.round(scrollPercent)
           var cof = windowHeight / 320
           var finalShift = cof * roundScroll
+
+          console.log(windowHeight)
 
           $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
           $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
