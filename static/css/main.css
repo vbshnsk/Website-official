@@ -100,7 +100,7 @@ a:hover, a {
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   left: 37px;
   z-index: 999;
@@ -360,16 +360,6 @@ h1 span{
   -webkit-text-fill-color: transparent;
   color: #0B2349;
   margin: 20px auto;
-}
-
-#sticky_rotated{
-  position: absolute;
-  margin: 0;
-  left: -45px;
-  bottom: 320px;
-  transform: rotate(270deg);
-  font-size: 18px;
-  font-weight: 300;
 }
 
 /*menu*/
@@ -1124,8 +1114,7 @@ input#sendform:hover{
     display: none;
   }
 
-  #cont, #sticky_rotated, 
-  .digisol-item-pair, .empty,
+  #cont, .digisol-item-pair, .empty,
   .description .line, .ellipsegrad {
       display: none;
   }

@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /*
-    smooth scroll (iOS works, androit probably not)
+    smooth scroll (iOS works, android probably not)
     */ 
 
       $('#mobile-menu a[href*="#"]').click(function() {
