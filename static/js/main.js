@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
        }
     });
 
-
     function closeMobileMenu(){
         $("#mobile-menu-burger img").removeClass("open").attr("src","../static/img/burger.png")
         $("#mobile-menu").css({"-webkit-transform":"translate(-100%)"})
@@ -231,7 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // click logo to scroll 1st slide
       $("#logo, .digisol-item-pair").on( "click", function(e){
-            e.preventDefault();
             first_slide()
         });
 
@@ -241,12 +239,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
         $("body, html").animate({
             scrollTop: position
-        } /* speed */ );
+        }, 300 /* speed */ );
+        e.preventDefault();
+
     }
 
     /*
      * scroll monitoring effects
     */
+    var position = $(window).scrollTop(); 
     $(document).scroll(function(e){
         var scrollAmount = $(window).scrollTop();
         var documentHeight = $(document).height();
@@ -256,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var roundScroll = Math.round(scrollPercent)
         var cof = windowHeight / 320
         var finalShift = cof * roundScroll
+
         if (isMobile){
               // circle position depends on scroll distance (mobile)
               $("section").removeClass("opaque")
@@ -268,6 +270,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (roundScroll <= 10){
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c1");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c1");
+                // if scrolled down
+                if(scrollAmount > position) {
+                    e.preventDefault();
+                    first_slide()
+                }
             }
             else if ( (roundScroll > 10) && (roundScroll <= 29) ){
                 // about us
@@ -293,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        
+        position = scrollAmount;
           
     });
 
