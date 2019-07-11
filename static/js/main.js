@@ -36,57 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    /* 
-    scroll first 100% of height
-    */
-    // $('#slider').
-
-    // scroll fullscreen
-    // $(".main").onepage_scroll({
-    //    sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-    //    easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-    //                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-    //    animationTime: 700,             // AnimationTime let you define how long each section takes to animate
-    //    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-    //    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-    //    beforeMove: function(index) {
-    //         // change circles position on slide change
-    //         var cls = "c" + index;
-    //         $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
-    //         $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-    //         $(".menuitem").hide(); // so menuitems dont mess with horizontal slide
-    //         closeMenu();
-    //    },  // This option accepts a callback function. The function will be called before the page moves.
-    //    afterMove: function(index) {
-    //         // reveal line slide from left
-    //         if (index == 3){
-    //             $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
-    //         }
-
-    //    },   // This option accepts a callback function. The function will be called after the page moves.
-    //    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-    //    keyboard: true,                  // You can activate the keyboard controls
-    //    responsiveFallback: 813,        // You can fallback to normal page scroll by defining the width of the browser in which
-    //                                     // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-    //                                     // the browser's width is less than 600, the fallback will kick in.
-    //    direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
-    // });
-
     // digisol menu click (open menu)
-    // $(".layer1, #logo").on( "click", function() {
-    //     if (!isMobile ){
-    //         $("#title_main").toggleClass("opened");
-    //         $(".layer3").toggleClass("header_step3");
-    //         $(".layer2").toggleClass("header_step2");
-    //         $(".layer1").toggleClass("header_step1 wiggle");
-    //         $(".menuitem").show(); // if slides scrolled before
-    //         $(".menuitem").toggleClass("hide");
-    //         $(".circle").toggleClass("blur");
-    //         $("#circles-bg").toggleClass("dark");
-    //     }
-    //     $("#logo").addClass("clicked");
-    //     setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
-    // });
+    $(".layer1, #logo").on( "click", function() {
+        // if (!isMobile ){
+        //     $("#title_main").toggleClass("opened");
+        //     $(".layer3").toggleClass("header_step3");
+        //     $(".layer2").toggleClass("header_step2");
+        //     $(".layer1").toggleClass("header_step1 wiggle");
+        //     $(".menuitem").show(); // if slides scrolled before
+        //     $(".menuitem").toggleClass("hide");
+        //     $(".circle").toggleClass("blur");
+        //     $("#circles-bg").toggleClass("dark");
+        // }
+        $("#logo").addClass("clicked");
+        setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
+    });
 
     // close digisol menu when clicked somewhere on 1st slide
     // $('html').click(function(e) {
@@ -264,6 +228,22 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
+      
+      // click logo to scroll 1st slide
+      $("#logo, .digisol-item-pair").on( "click", function(e){
+            e.preventDefault();
+            first_slide()
+        });
+
+        // scroll 1st slide
+    function first_slide(){
+        var position = $("#about-us").offset().top;
+    
+        $("body, html").animate({
+            scrollTop: position
+        } /* speed */ );
+    }
+
     /*
      * scroll monitoring effects
     */
@@ -286,24 +266,30 @@ document.addEventListener('DOMContentLoaded', function() {
         else{
             console.log(roundScroll)
             if (roundScroll <= 10){
-                turn = 1
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c1");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c1");
             }
             else if ( (roundScroll > 10) && (roundScroll <= 29) ){
                 // about us
                 $("#about-us").addClass("animated fadeInUp")
                 $("#about-us .fromtop-animation").addClass("animated fadeInDown")
                 $(".imgrow img, #about-us h3").addClass("animated fadeInLeft")
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c2");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c2");
             }
             else if ( (roundScroll > 29) && (roundScroll <= 45) ){
                 // services and prices
                 $("#services").addClass("animated fadeInUp")
                 $("#services .fromtop-animation").addClass("animated fadeInDown")
                 $("#services .left-animaton").addClass("animated fadeInLeft")
-    
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c3");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c3");
             }
             else if (roundScroll > 45){
                 // portfolio    
                 $("#portfolio").addClass("animated fadeInUp")
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c4");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c4");
             }
         }
         
