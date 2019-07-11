@@ -23,18 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#slider').mousemove(function(event) {
         if ( (!$("#title_main").hasClass("opened")) && !isMobile ){
-            var trans = 0;
-            xPercent = event.pageX / $( document ).width() * 100 * 4;
-            trans = (xPercent - 50)/2;
-            backtrans = (xPercent - 50)/6;
             var angle_big = Math.atan2(event.pageY - centerY_big, event.pageX - centerX_big) * 180 / Math.PI;
             var angle_small = Math.atan2(event.pageY - centerY_small, event.pageX - centerX_small) * 180 / Math.PI;
 
             var angle_big_full = angle_big <= 0 ? angle_big : -180 - (180 - angle_big);
             var angle_small_full = angle_small <= 0 ? angle_small : -180 - (180 - angle_small);
 
-            $(".big").css({"-webkit-transform":"translate(" + backtrans + "px)" + "rotate(" + angle_big_full + "deg)"});
-            $(".small").css({"-webkit-transform":"translate(" + trans + "px)" + "rotate(" + angle_small_full + "deg)"});
+            $(".big").css({"-webkit-transform":"rotate(" + angle_big_full + "deg)"});
+            $(".small").css({"-webkit-transform":"rotate(" + angle_small_full + "deg)"});
         }
     });
 
@@ -71,15 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // digisol menu click (open menu)
     $(".layer1, #logo").on( "click", function() {
-        $("#title_main").toggleClass("opened");
-        $(".layer3").toggleClass("header_step3");
-        $(".layer2").toggleClass("header_step2");
-        $(".layer1").toggleClass("header_step1 wiggle");
-        $(".menuitem").show(); // if slides scrolled before
-        $(".menuitem").toggleClass("hide");
+        if (!isMobile ){
+            $("#title_main").toggleClass("opened");
+            $(".layer3").toggleClass("header_step3");
+            $(".layer2").toggleClass("header_step2");
+            $(".layer1").toggleClass("header_step1 wiggle");
+            $(".menuitem").show(); // if slides scrolled before
+            $(".menuitem").toggleClass("hide");
+            $(".circle").toggleClass("blur");
+            $("#circles-bg").toggleClass("dark");
+        }
         $("#logo").addClass("clicked");
-        $(".circle").toggleClass("blur");
-        $("#circles-bg").toggleClass("dark");
         setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
     });
 
@@ -107,11 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //popup contact form window
-    $("#cont").click(function(){
+    $("#cont, #cont-mobile").click(function(){
         $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
       });
     $("#close-pop").click(function(){
         $("#popup-contact").removeClass("animated fadeInDownForm").addClass("animated fadeInTopForm");
+        if (isMobile){
+            $("#mobile-menu-burger").show()
+        }
         setTimeout( function(){ $("#popup-contact").addClass("goback"); }, 1000 );
       });
 
@@ -206,11 +207,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // close mobile menu when clicked somewhere else
-    // $('html').click(function(e) {
-    //    if(!$(e.target).not("#mobile-menu")){
-    //         closeMobileMenu()
-    //    }
-    // });
+    $('html').on( "click", function(e) {
+       if( !$(e.target).is("#mobile-menu, #mobile-menu *") ){
+            if( !$(e.target).parents("#mobile-menu-burger").is("#mobile-menu-burger") ){
+                closeMobileMenu()
+                console.log("dick") 
+            }
+       }
+    });
 
 
     function closeMobileMenu(){
@@ -222,6 +226,31 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#mobile-menu-burger img").addClass("open").attr("src","../static/img/close-menu.png")
         $("#mobile-menu").css({"-webkit-transform":"translate(0%)"})
     }
+
+    // smooth scroll
+
+      $('#mobile-menu a[href*="#"]').click(function() {
+          if ( !$(this).hasClass("no-smooth-scroll") ){
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html,body').animate({
+                    scrollTop: target.offset().top
+                  }, 500);
+                  closeMobileMenu()
+                  return false;
+                }
+              }
+          }
+          else if ( $(this).hasClass("no-smooth-scroll") ){
+            $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
+            $("#mobile-menu-burger").hide()
+            $("#close-pop img").attr("src","../static/img/close-menu.png")
+            closeMobileMenu()
+          }
+      });
+
 
 }, false);
 
