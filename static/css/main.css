@@ -25,7 +25,7 @@
     font-style: normal;
 }
 
-*, ::after, ::before {
+::after, ::before {
   box-sizing: content-box;
 }
 
@@ -43,7 +43,7 @@
 
 /*effects*/
 .hide{
-  left: 300% !important;
+  left: 400% !important;
 }
 
 .hidden{
@@ -207,9 +207,9 @@ a:hover, a {
 }
 
 #title_main{
-  padding: 15% 0 0 3%;
-  width: 33%;
   text-align: center;
+  position: relative;
+  transform: translate(-25%, 100%);
 }
 
 .digisol_header{
@@ -365,7 +365,7 @@ h1 span{
 #sticky_rotated{
   position: absolute;
   margin: 0;
-  left: -95px;
+  left: -45px;
   bottom: 320px;
   transform: rotate(270deg);
   font-size: 18px;
@@ -375,9 +375,10 @@ h1 span{
 /*menu*/
 
 #menu{
-  padding: 50px 50px 0;
+  padding: 50px 75px 0;
   position: absolute;
-  width: calc(100% - 100px);
+  width: 100%;
+  box-sizing: border-box;
   z-index: 99;
 }
 
@@ -1105,13 +1106,14 @@ input#sendform:hover{
  * ##############
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 812px) {
 
   /* smooth scroll fix */
   html, body {
-    overflow-y: scroll !important; /* has to be scroll, not auto */
+    /*overflow-y: scroll !important;  has to be scroll, not auto */
     overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
+    /*overflow-y: visible;*/
+    /*-webkit-overflow-scrolling: touch;*/
   }
 
   .mobile{
@@ -1130,7 +1132,7 @@ input#sendform:hover{
 
   #menu {
       padding: 50px 15px 0;
-      width: calc(100% - 30px);
+      width: 100%;
       position: relative;
   }
 
@@ -1142,12 +1144,23 @@ input#sendform:hover{
     cursor: pointer;
   }
 
-  #title_main {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      padding: 0;
+  .main section{
+    width: 100%;
+    height: auto !important;
   }
+
+
+  #title_main {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    transform: translate(0);
+  }
+
+  .topnav-right {
+    margin-right: 0px;
+}
 
   #logo{
     position: absolute;
@@ -1163,7 +1176,7 @@ input#sendform:hover{
     font-size: 3.3vw;
     font-weight: 500;
     bottom: 15px;
-    position: absolute;
+    position: relative;
     left: 1.2em;
 }
 
@@ -1237,7 +1250,6 @@ input#sendform:hover{
   .dark-bg {
     margin: 0 5%;
     padding: 11%;
-    height: 95em;
 }
 
   .hidden{
@@ -1272,7 +1284,7 @@ input#sendform:hover{
   }
 
   #about-us{
-    height: 550px;
+    /*height: 550px;*/
     margin-bottom: 30px;
   }
 
@@ -1354,7 +1366,7 @@ input#sendform:hover{
   }
 
   #services{
-    height: 600px !important;
+    /*height: 600px !important;*/
   }
 
   #services-text {
@@ -1379,6 +1391,7 @@ input#sendform:hover{
   #about-us .gradline {
     min-width: inherit;
     width: 100%;
+    box-sizing: content-box;
 }
 
   .portfolio-item{
