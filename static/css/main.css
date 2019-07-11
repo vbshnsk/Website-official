@@ -1111,9 +1111,9 @@ input#sendform:hover{
   /* smooth scroll fix */
   html, body {
     /*overflow-y: scroll !important;  has to be scroll, not auto */
-    /*overflow-x: hidden !important;*/
-    overflow: visible;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden !important;
+    /*overflow-y: visible;*/
+    /*-webkit-overflow-scrolling: touch;*/
   }
 
   .mobile{
