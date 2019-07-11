@@ -1105,12 +1105,13 @@ input#sendform:hover{
  * ##############
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 812px) {
 
   /* smooth scroll fix */
   html, body {
-    overflow-y: scroll !important; /* has to be scroll, not auto */
-    overflow-x: hidden !important;
+    /*overflow-y: scroll !important;  has to be scroll, not auto */
+    /*overflow-x: hidden !important;*/
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
   }
 

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // detect screen size
-    var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+    var isMobile = window.matchMedia("only screen and (max-width: 812px)").matches;
 
 	// circle rotation
     $(".big").rotate(-45);
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
        },   // This option accepts a callback function. The function will be called after the page moves.
        loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
        keyboard: true,                  // You can activate the keyboard controls
-       responsiveFallback: 767,        // You can fallback to normal page scroll by defining the width of the browser in which
+       responsiveFallback: 813,        // You can fallback to normal page scroll by defining the width of the browser in which
                                         // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
                                         // the browser's width is less than 600, the fallback will kick in.
        direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
@@ -211,7 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
        if( !$(e.target).is("#mobile-menu, #mobile-menu *") ){
             if( !$(e.target).parents("#mobile-menu-burger").is("#mobile-menu-burger") ){
                 closeMobileMenu()
-                console.log("dick") 
             }
        }
     });
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#mobile-menu").css({"-webkit-transform":"translate(0%)"})
     }
 
-    // smooth scroll
+    // smooth scroll (iOS doesn't work!)
 
       $('#mobile-menu a[href*="#"]').click(function() {
           if ( !$(this).hasClass("no-smooth-scroll") ){
@@ -250,6 +249,21 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu()
           }
       });
+
+    // swipe tracking
+    $(document).scroll(function(e){
+          var scrollAmount = $(window).scrollTop();
+          var documentHeight = $(document).height();
+          var windowHeight = $(window).height();
+
+          var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
+          var roundScroll = Math.round(scrollPercent)
+
+          console.log(roundScroll)  
+          // $(".scroll").css("width", (scrollPercent + '%'));
+          // $("h1").text("Scroll Percentage: " + roundScroll + '%');
+        });
+
 
 
 }, false);
