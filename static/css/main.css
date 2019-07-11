@@ -557,7 +557,7 @@ section h2{
 .dark-bg{
   background-color: rgba(0, 0, 0, 0.82);
   padding: 1% 7% 3%;
-  margin: 65px 2% 10% 2%;
+  margin: 2%;
 }
 
 .dark-bg h2{
@@ -1008,7 +1008,7 @@ input#sendform:hover{
 
 .portfolio-bg{
     background-color: rgba(0, 0, 0, 0.82);
-    margin: 65px 2% 10% 2%;
+    margin: 2%;
     height: auto !important;
 }
 
