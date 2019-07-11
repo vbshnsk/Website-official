@@ -265,24 +265,49 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
     /*
-    circle position depends on scroll distance (mobile)
+     * scroll monitoring effects
     */
     $(document).scroll(function(e){
+        var scrollAmount = $(window).scrollTop();
+        var documentHeight = $(document).height();
+        var windowHeight = window.innerHeight;
+
+        var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
+        var roundScroll = Math.round(scrollPercent)
+        var cof = windowHeight / 320
+        var finalShift = cof * roundScroll
         if (isMobile){
-            var scrollAmount = $(window).scrollTop();
-              var documentHeight = $(document).height();
-              var windowHeight = window.innerHeight;
-
-              var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
-              var roundScroll = Math.round(scrollPercent)
-              var cof = windowHeight / 320
-              var finalShift = cof * roundScroll
-
-              console.log(windowHeight)
-
+              // circle position depends on scroll distance (mobile)
+              $("section").removeClass("opaque")
               $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
               $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
+
         }
+        else{
+            console.log(roundScroll)
+            if (roundScroll <= 10){
+                turn = 1
+            }
+            else if ( (roundScroll > 10) && (roundScroll <= 29) ){
+                // about us
+                $("#about-us").addClass("animated fadeInUp")
+                $("#about-us .fromtop-animation").addClass("animated fadeInDown")
+                $(".imgrow img, #about-us h3").addClass("animated fadeInLeft")
+            }
+            else if ( (roundScroll > 29) && (roundScroll <= 45) ){
+                // services and prices
+                $("#services").addClass("animated fadeInUp")
+                $("#services .fromtop-animation").addClass("animated fadeInDown")
+                $("#services .left-animaton").addClass("animated fadeInLeft")
+    
+            }
+            else if (roundScroll > 45){
+                // portfolio    
+                $("#portfolio").addClass("animated fadeInUp")
+            }
+        }
+        
+        
           
     });
 

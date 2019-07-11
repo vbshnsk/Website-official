@@ -50,6 +50,10 @@
   visibility: hidden;
 }
 
+.opaque{
+  opacity: 0 !important;
+}
+
 .goback{
   z-index: 0 !important;
 }
@@ -435,9 +439,9 @@ section{
   color: white;
 }
 
-#about-us h2{
-  margin-top: 5%;
-  margin-bottom: 1%;
+section h2{
+  margin-top: 5% !important;
+  margin-bottom: 1% !important;
 }
 
 #about-us .halftext{
@@ -460,6 +464,7 @@ section{
   width: 33%;
   padding-bottom: 2%;
   padding-top: 0;
+  box-sizing: content-box;
 }
 
 #whatwedo{
@@ -510,6 +515,29 @@ section{
   filter: grayscale(100%);
   opacity: 0.5;
   transition: all 0.5s ease !important;
+  animation-delay: 1s;
+}
+
+#about-us h3{
+  animation-delay: 0.5s;
+}
+
+.fromtop-animation{
+  animation-delay: 0.5s;
+}
+
+.left1{
+  animation-delay: 0.8s;
+}
+
+.left2{
+  animation-delay: 1s;
+}
+.left3{
+  animation-delay: 1.2s;
+}
+.left4{
+  animation-delay: 1.4s;
 }
 
 .imgrow img:hover{
@@ -802,11 +830,11 @@ section{
 }
 
 #popup-contact textarea{
-  height: 85px;
   width: 100%;
   padding-top: 10px;
   margin-top: -10px;
   overflow-y: hidden;
+  height: 35px;
 }
 
 .tallfield{
@@ -981,6 +1009,7 @@ input#sendform:hover{
 .portfolio-bg{
     background-color: rgba(0, 0, 0, 0.82);
     margin: 65px 2% 10% 2%;
+    height: auto !important;
 }
 
 .portfolio-item{
@@ -1052,15 +1081,15 @@ input#sendform:hover{
 
 /*items*/
 .yana{
-  background: url(../img/portfolio/thumbnails/yana.jpg);
+  background: url("../img/portfolio/thumbnails/yana.jpg");
 }
 
 .leafus{
-  background: url(../img/portfolio/thumbnails/leafus.jpg);
+  background: url("../img/portfolio/thumbnails/leafus.jpg");
 }
 
 .bari{
-  background: url(../img/portfolio/thumbnails/bari.jpg);
+  background: url("../img/portfolio/thumbnails/bari.jpg");
 }
 
 
@@ -1087,6 +1116,22 @@ input#sendform:hover{
    border-radius: 10px;
    background-color: #A43F94;
  }
+
+ .child0:before{
+  content: "";
+  cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+}
+
+.child1:after{
+  content: "";
+  cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+}
 
 /*
  * ##############
@@ -1164,7 +1209,7 @@ input#sendform:hover{
   #footer {
     font-size: 3.3vw;
     font-weight: 500;
-    bottom: 15px;
+    bottom: 100px;
     position: relative;
     left: 1.2em;
 }
@@ -1346,12 +1391,33 @@ input#sendform:hover{
     padding-left: 5px;
   }
 
-  .child0:before{
-
+  .imgrow:first-child:before{
+    background: url("../img/red-cross.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 40px;
+    transform: translate(-110%, -5px);
+    height: 40px;
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    cursor: pointer;
+    
   }
 
-  .child1:after{
-
+  .imgrow:first-child:after{
+    background: url("../img/green-check.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 40px;
+    transform: translate(10%, -5px);
+    height: 40px;
+    content: "";
+    display: inline-block;
+    cursor: pointer;
+    
   }
 
   #services{
@@ -1444,11 +1510,11 @@ input#sendform:hover{
 
   .tallfield {
     width: 80% !important;
-    height: 20% !important;
+    height: 13% !important;
   }
 
   #popup-contact textarea {
-      margin-top: -17px;
+    margin-top: 10px;
   }
 
   .input-file-container {
