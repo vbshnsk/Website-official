@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
-    // swipe tracking
+    // circle position depends on scroll distance 
     $(document).scroll(function(e){
           var scrollAmount = $(window).scrollTop();
           var documentHeight = $(document).height();
@@ -258,10 +258,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
           var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
           var roundScroll = Math.round(scrollPercent)
+          var cof = windowHeight / 320
+          var finalShift = cof * roundScroll
 
           console.log(roundScroll)  
-          // $(".scroll").css("width", (scrollPercent + '%'));
-          // $("h1").text("Scroll Percentage: " + roundScroll + '%');
+          $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
+          $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
         });
 
 
