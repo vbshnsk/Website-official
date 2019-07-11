@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // detect screen size
     var isMobile = window.matchMedia("only screen and (max-width: 812px)").matches;
 
-	// circle rotation
+	/*
+    circle rotation
+    */
     $(".big").rotate(-45);
     $(".small").rotate(-45);
 
@@ -34,77 +36,85 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // scroll fullscreen
-    $(".main").onepage_scroll({
-       sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-       easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-                                        // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-       animationTime: 700,             // AnimationTime let you define how long each section takes to animate
-       pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-       updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-       beforeMove: function(index) {
-            // change circles position on slide change
-            var cls = "c" + index;
-            $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
-            $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-            $(".menuitem").hide(); // so menuitems dont mess with horizontal slide
-            closeMenu();
-       },  // This option accepts a callback function. The function will be called before the page moves.
-       afterMove: function(index) {
-            // reveal line slide from left
-            if (index == 3){
-                $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
-            }
+    /* 
+    scroll first 100% of height
+    */
+    // $('#slider').
 
-       },   // This option accepts a callback function. The function will be called after the page moves.
-       loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-       keyboard: true,                  // You can activate the keyboard controls
-       responsiveFallback: 813,        // You can fallback to normal page scroll by defining the width of the browser in which
-                                        // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-                                        // the browser's width is less than 600, the fallback will kick in.
-       direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
-    });
+    // scroll fullscreen
+    // $(".main").onepage_scroll({
+    //    sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+    //    easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+    //                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+    //    animationTime: 700,             // AnimationTime let you define how long each section takes to animate
+    //    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+    //    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+    //    beforeMove: function(index) {
+    //         // change circles position on slide change
+    //         var cls = "c" + index;
+    //         $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
+    //         $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
+    //         $(".menuitem").hide(); // so menuitems dont mess with horizontal slide
+    //         closeMenu();
+    //    },  // This option accepts a callback function. The function will be called before the page moves.
+    //    afterMove: function(index) {
+    //         // reveal line slide from left
+    //         if (index == 3){
+    //             $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
+    //         }
+
+    //    },   // This option accepts a callback function. The function will be called after the page moves.
+    //    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+    //    keyboard: true,                  // You can activate the keyboard controls
+    //    responsiveFallback: 813,        // You can fallback to normal page scroll by defining the width of the browser in which
+    //                                     // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+    //                                     // the browser's width is less than 600, the fallback will kick in.
+    //    direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
+    // });
 
     // digisol menu click (open menu)
-    $(".layer1, #logo").on( "click", function() {
-        if (!isMobile ){
-            $("#title_main").toggleClass("opened");
-            $(".layer3").toggleClass("header_step3");
-            $(".layer2").toggleClass("header_step2");
-            $(".layer1").toggleClass("header_step1 wiggle");
-            $(".menuitem").show(); // if slides scrolled before
-            $(".menuitem").toggleClass("hide");
-            $(".circle").toggleClass("blur");
-            $("#circles-bg").toggleClass("dark");
-        }
-        $("#logo").addClass("clicked");
-        setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
-    });
+    // $(".layer1, #logo").on( "click", function() {
+    //     if (!isMobile ){
+    //         $("#title_main").toggleClass("opened");
+    //         $(".layer3").toggleClass("header_step3");
+    //         $(".layer2").toggleClass("header_step2");
+    //         $(".layer1").toggleClass("header_step1 wiggle");
+    //         $(".menuitem").show(); // if slides scrolled before
+    //         $(".menuitem").toggleClass("hide");
+    //         $(".circle").toggleClass("blur");
+    //         $("#circles-bg").toggleClass("dark");
+    //     }
+    //     $("#logo").addClass("clicked");
+    //     setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
+    // });
 
     // close digisol menu when clicked somewhere on 1st slide
-    $('html').click(function(e) {
-       if($(e.target).is("#slider")){
-            closeMenu();
-       }
-    });
+    // $('html').click(function(e) {
+    //    if($(e.target).is("#slider")){
+    //         closeMenu();
+    //    }
+    // });
     // close digisol menu when "escape" key pushed
-    $(document).keyup(function(e) {
-        if (e.key === "Escape") { // escape key maps to keycode `27`
-            closeMenu();
-        }
-    });
+    // $(document).keyup(function(e) {
+    //     if (e.key === "Escape") { // escape key maps to keycode `27`
+    //         closeMenu();
+    //     }
+    // });
 
-    function closeMenu() {
-        $(".layer3").removeClass("header_step3");
-        $(".layer2").removeClass("header_step2");
-        $(".layer1").removeClass("header_step1").addClass("wiggle");
-        $(".menuitem").addClass("hide");
-        $(".circle").removeClass("blur");
-        $("#circles-bg").removeClass("dark");
-        $("#title_main").removeClass("opened");
-    }
+    // function closeMenu() {
+    //     $(".layer3").removeClass("header_step3");
+    //     $(".layer2").removeClass("header_step2");
+    //     $(".layer1").removeClass("header_step1").addClass("wiggle");
+    //     $(".menuitem").addClass("hide");
+    //     $(".circle").removeClass("blur");
+    //     $("#circles-bg").removeClass("dark");
+    //     $("#title_main").removeClass("opened");
+    // }
 
-    //popup contact form window
+    /*
+    POPUP contact form window
+    */
+
     $("#cont, #cont-mobile").click(function(){
         $("#popup-contact").removeClass("animated fadeInTopForm goback").addClass("animated fadeInDownForm");
       });
@@ -194,7 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-        // mobile menu
+    /*
+    mobile menu
+    */ 
 
     // toggle
     $("#mobile-menu-burger").on( "click", function() {
@@ -226,7 +238,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#mobile-menu").css({"-webkit-transform":"translate(0%)"})
     }
 
-    // smooth scroll (iOS doesn't work!)
+    /*
+    smooth scroll (iOS doesn't work!)
+    */ 
 
       $('#mobile-menu a[href*="#"]').click(function() {
           if ( !$(this).hasClass("no-smooth-scroll") ){
@@ -250,7 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
-    // circle position depends on scroll distance 
+    /*
+    circle position depends on scroll distance (mobile)
+    */
     $(document).scroll(function(e){
           var scrollAmount = $(window).scrollTop();
           var documentHeight = $(document).height();
@@ -261,7 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
           var cof = windowHeight / 320
           var finalShift = cof * roundScroll
 
-          console.log(roundScroll)  
           $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
           $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
         });
