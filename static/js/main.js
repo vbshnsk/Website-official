@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
       // click logo to scroll 1st slide
-      $("#logo, .layer1").on( "click", function(e){
-            first_slide()
-        });
+      // $("#logo, .layer1").on( "click", function(e){
+      //       first_slide()
+      //   });
 
         // scroll 1st slide
     function first_slide(){
@@ -241,6 +241,11 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTop: position - 120
         }, 300 /* speed */ );
     }
+
+    $('.scroll-down').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+    });
 
     /*
      * scroll monitoring effects
