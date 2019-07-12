@@ -1012,14 +1012,17 @@ input#sendform:hover{
 
 #yana-port .thumbnail{
   background: url(../img/portfolio/thumbnails/yana.jpg);
+  background-size: cover;
 }
   
 #leafus-port .thumbnail{
   background: url(../img/portfolio/thumbnails/leafus.jpg);
+  background-size: cover;
 }
 
 #bari-port .thumbnail{
   background: url(../img/portfolio/thumbnails/bari.jpg);
+  background-size: cover;
 }
 
 #yana-port .description{
@@ -1036,18 +1039,18 @@ input#sendform:hover{
 
 .container{
   display: inline-flex;
-  height: 100%;
+  height: 100%; 
 }
 
 .description{
   text-align: left;
   width: 25%;
   min-width: 300px;
+  padding: 5% 7% 0 3%;
   flex: 1;
 }
 
 .thumbnail{
-  background-size: cover;
   flex: 2;
   margin-right: 5%;
 }
