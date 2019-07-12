@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // detect screen size
     var isMobile = window.matchMedia("only screen and (max-width: 812px)").matches;
-
-	/*
+	
+    /*
     circle rotation
     */
     $(".big").rotate(-45);
     $(".small").rotate(-45);
+    if (isMobile){
+        $(".big").rotate(-145);
+        $(".small").rotate(-145);
+    }
 
     var big = $(".big");
     var offset_big = big.offset();
@@ -36,57 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    /* 
-    scroll first 100% of height
-    */
-    // $('#slider').
-
-    // scroll fullscreen
-    // $(".main").onepage_scroll({
-    //    sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-    //    easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-    //                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-    //    animationTime: 700,             // AnimationTime let you define how long each section takes to animate
-    //    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-    //    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-    //    beforeMove: function(index) {
-    //         // change circles position on slide change
-    //         var cls = "c" + index;
-    //         $(".big").removeClass("c1 c2 c3 c4").addClass(cls);
-    //         $(".small").removeClass("c1 c2 c3 c4").addClass(cls);
-    //         $(".menuitem").hide(); // so menuitems dont mess with horizontal slide
-    //         closeMenu();
-    //    },  // This option accepts a callback function. The function will be called before the page moves.
-    //    afterMove: function(index) {
-    //         // reveal line slide from left
-    //         if (index == 3){
-    //             $(".gradline").removeClass("hidden").addClass("animated fadeInLeftline");
-    //         }
-
-    //    },   // This option accepts a callback function. The function will be called after the page moves.
-    //    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-    //    keyboard: true,                  // You can activate the keyboard controls
-    //    responsiveFallback: 813,        // You can fallback to normal page scroll by defining the width of the browser in which
-    //                                     // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-    //                                     // the browser's width is less than 600, the fallback will kick in.
-    //    direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
-    // });
-
     // digisol menu click (open menu)
-    // $(".layer1, #logo").on( "click", function() {
-    //     if (!isMobile ){
-    //         $("#title_main").toggleClass("opened");
-    //         $(".layer3").toggleClass("header_step3");
-    //         $(".layer2").toggleClass("header_step2");
-    //         $(".layer1").toggleClass("header_step1 wiggle");
-    //         $(".menuitem").show(); // if slides scrolled before
-    //         $(".menuitem").toggleClass("hide");
-    //         $(".circle").toggleClass("blur");
-    //         $("#circles-bg").toggleClass("dark");
-    //     }
-    //     $("#logo").addClass("clicked");
-    //     setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
-    // });
+    $(".layer1, #logo").on( "click", function() {
+        // if (!isMobile ){
+        //     $("#title_main").toggleClass("opened");
+        //     $(".layer3").toggleClass("header_step3");
+        //     $(".layer2").toggleClass("header_step2");
+        //     $(".layer1").toggleClass("header_step1 wiggle");
+        //     $(".menuitem").show(); // if slides scrolled before
+        //     $(".menuitem").toggleClass("hide");
+        //     $(".circle").toggleClass("blur");
+        //     $("#circles-bg").toggleClass("dark");
+        // }
+        $("#logo").addClass("clicked");
+        setTimeout( function(){ $("#logo").removeClass("clicked"); }, 100 );
+    });
 
     // close digisol menu when clicked somewhere on 1st slide
     // $('html').click(function(e) {
@@ -131,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileInfo = $("#attach-text");
     const realInput = $("#real-input");
 
-    // click on image (clip, or cross on hover)
+        // click on image (clip, or cross on hover)
     uploadButton.click(function(e) {
         // if we pushing on clip (ading file)
         if ( $("#attach-clip img").hasClass( "addfile" ) )  {
@@ -177,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // form validation
-
         // name
     $('#contact_name input').on('input', function() {
         var input = $(this);
@@ -190,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#contact_name').removeClass("okborder").addClass("badborder");
         }
     });
-
         // email
     $('#contact_email input').on('input', function() {
         var input = $(this);
@@ -227,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
        }
     });
 
-
     function closeMobileMenu(){
         $("#mobile-menu-burger img").removeClass("open").attr("src","../static/img/burger.png")
         $("#mobile-menu").css({"-webkit-transform":"translate(-100%)"})
@@ -239,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /*
-    smooth scroll (iOS doesn't work!)
+    smooth scroll (iOS works, android probably not)
     */ 
 
       $('#mobile-menu a[href*="#"]').click(function() {
@@ -263,6 +228,21 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu()
           }
       });
+    
+    /*
+     * header (desktop) menu click to id 
+     */
+    $('.desktop-menu a[href*="#"], .scroll-down, #whatwedo a').on('click', function(e) {
+      e.preventDefault()
+
+      $('html, body').animate(
+        {
+          scrollTop: $($(this).attr('href')).offset().top - 100, // TODO: find out why it gor too far
+        },
+        500,
+        'linear'
+      )
+    })
 
       /* portfolio slider buttons */
       
@@ -327,36 +307,93 @@ document.addEventListener('DOMContentLoaded', function() {
     $(nextButton).hover(hoverInNext, hoverOutNext);
 
     /*
-    circle position depends on scroll distance (mobile)
-    */
+     * scroll monitoring effects
+     */
+    var position = $(window).scrollTop(); 
     $(document).scroll(function(e){
+        var scrollAmount = $(window).scrollTop();  
+        var documentHeight = $(document).height();
+        var windowHeight = window.innerHeight;
+        var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
+        var roundScroll = Math.round(scrollPercent)
+        var cof = windowHeight / 320 // circle diameter == 320px
+        var finalShift = cof * roundScroll
+
         if (isMobile){
-            var scrollAmount = $(window).scrollTop();
-              var documentHeight = $(document).height();
-              var windowHeight = window.innerHeight;
-
-              var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
-              var roundScroll = Math.round(scrollPercent)
-              var cof = windowHeight / 320
-              var finalShift = cof * roundScroll
-
-              console.log(windowHeight)
-
+              // track scroll position on MOBILE devices
+              // chane circles y-pos accordingly
+              $("section").removeClass("opaque")
               $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
               $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
+
         }
-          
+        // track scroll position on DESKTOP devices
+        // TODO: refactor this using AOS triggers
+        else{
+            console.log(roundScroll)
+            if (roundScroll <= 10){
+                // main
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c1");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c1");
+            }
+            else if ( (roundScroll > 10) && (roundScroll <= 29) ){
+                // about us
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c2");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c2");
+            }
+            else if ( (roundScroll > 29) && (roundScroll <= 45) ){
+                // services and prices
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c3");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c3");
+            }
+            else if (roundScroll > 45){
+                // portfolio    
+                $(".big").removeClass("c1 c2 c3 c4").addClass("c4");
+                $(".small").removeClass("c1 c2 c3 c4").addClass("c4");
+            }
+        }
+        position = scrollAmount;
     });
 
-    
+    // AOS
+    AOS.init({
+      // Global settings:
+      disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 50, // the delay on throttle used while scrolling the page (advanced)
+    });
+
+    /*
+     * take me to the top (show on 1/3 of the scroll)
+     */
+    if ($('#back-to-top').length) {
+        var thirdPage = $(document).height() / 3;
+        var scrollTrigger = thirdPage, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+
 
 
 }, false);
-
-
-
-
-
-
-
-

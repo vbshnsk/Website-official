@@ -22,18 +22,19 @@
     <!-- glitch -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 
-    <!-- animate css  -->
+    <!-- animate css/wow js  -->
     <link rel="stylesheet" href='{{ url_for("static", filename="css/animate.css") }}'>
+    <!-- <script type="module" src='{{ url_for("static", filename="js/wow.js") }}'></script> -->
+    
+    <!-- AOS -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- rotate -->
     <script src='{{ url_for("static", filename="js/jQueryRotate.js") }}'></script>
 
-    <!-- one-page scroll -->
-    <!-- <link rel="stylesheet" href='{{ url_for("static", filename="css/onepage-scroll.css") }}'> -->
-    <script src='{{ url_for("static", filename="js/jquery.onepage-scroll.js") }}'></script>
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,10 +49,26 @@
         <img src="../static/img/gradient-circle.png" alt="Circle Big" class="circle big c1">
         <img src="../static/img/gradient-circle.png" alt="Circle Small" class="circle small c1">
     </div>
-    <nav id="menu">
-        <a href="javascript:$('.main').moveTo(1);" id="stringlogo" class="shadow">
+    <nav id="menu" data-aos="fade-right" data-aos-delay="300">
+        <a href="/" id="stringlogo" class="shadow" >
             digisol agency
         </a>
+        <div class="desktop-menu desktop">
+            <ul>
+                <li class="submenu">
+                    <a href="#about-us">About Us</a>
+                    <ul class="dropdown" id="blog-link">
+                        <li><a href="#blog">Blog</a></li>
+                      </ul>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+            </ul>
+        </div>
         <div class="topnav-right">
             <a id="cont" >CONTACT US</a>
             <a id="mobile-menu-burger" class="mobile close">
@@ -111,7 +128,7 @@
                 <a href="#portfolio">PORTFOLIO</a>
             </li>
             <li>
-                <a href="#contact" id="#cont-mobile" class="no-smooth-scroll">CONTACT</a>
+                <a href="#" id="#cont-mobile" class="no-smooth-scroll">CONTACT</a>
             </li>
         </ul>
     </div>
@@ -120,76 +137,112 @@
     <!-- slides stuff -->
     <div class="main">
         <section id="slider">
-            <div id="title_main" cls>
-                <img src="../static/img/digisol-d.png" id="logo">
+            <div id="title_main">
+                <a href="#about-us" class=".scroll-down"><img src="../static/img/digisol-d.png" id="logo"></a>
                 <div class="digisol-item-pair">
                     <h1 class="digisol_header layer4">digisol</h1>
-                    <a href="javascript:$('.main').moveTo(1);" class="hide menuitem menuitem4">main page</a>
+                    <a href="#" class="hide menuitem menuitem4">main page</a>
                 </div>
                 <div class="digisol-item-pair">
                     <h1 class="digisol_header layer3">digisol</h1>
-                    <a href="javascript:$('.main').moveTo(2);" class="hide menuitem menuitem3">about us</a>
+                    <a href="" class="hide menuitem menuitem3">about us</a>
                 </div>
                 <div class="digisol-item-pair">
                     <h1 class="digisol_header layer2">digisol</h1>
-                    <a href="javascript:$('.main').moveTo(3);" class="hide menuitem menuitem2">services</a>
+                    <a href="" class="hide menuitem menuitem2">services</a>
                 </div>
                 <div class="digisol-item-pair">
                     <h1 class="digisol_header layer1 wiggle">digisol</h1>
-                    <a href="javascript:$('.main').moveTo(4);" class="hide menuitem menuitem1">portfolio</a>
+                    <a href="" class="hide menuitem menuitem1">portfolio</a>
                 </div>
             </div>
-            <p id="sticky_rotated">digital solutions for your business</p>
+            <div id="footer" data-aos="fade-right" data-aos-delay="300" data-aos-anchor="#slider">
+                © Digisol Agency, All rights reserved.
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-behance"></i> </a>
+                <a href="https://github.com/digisol-agency" target="_blank">
+                    <i class="fab fa-github-alt"></i>
+                </a>
+            </div>
         </section>
-        <section id="about-us">
+        <section id="about-us" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <div class="dark-bg">
-                <h2>About Us</h2>
-                <img src="../static/img/gradient-line.png" alt="line" class="gradline">
-                <p class="halftext description">
-                	We help businesses grow by telling their story & creating amazing digital experiences. <br>
-                	<br>
-                	We are the team of young yet experienced perfectionists, provides full-cycle of
-                    services helping your company to become a leading representative on the Web.</p>
-                <div class="halftext" id="whatwedo">
-                    <a href="javascript:$('.main').moveTo(3);">
-                        What do we do?
-                    </a>
+                <div class="halfs-row">
+                        <!-- ABOUT US TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                        <h2>About Us</h2>
+                        <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+                        <p class="halftext description">
+                            We help businesses grow by telling their story & creating amazing digital experiences. <br>
+                            <br>
+                            We are the team of young yet experienced perfectionists, provides full-cycle of
+                            services helping your company to become a leading representative on the Web.</p>
+                        <div class="halftext center-text-mobile" id="whatwedo">
+                            <a href="#services">
+                                What do we do?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- OUR BLOG TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="450" data-aos-duration="800">
+                        <h2>Our Blog</h2>
+                        <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+                        <p class="halftext description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac eleifend eros, eget eleifend est. Proin venenatis faucibus massa, ac tempor enim venenatis sed. Cras dolor ante, ullamcorper ac felis at, viverra venenatis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac eleifend eros, eget eleifend est. Proin venenatis faucibus massa.</p>
+                        <div class="halftext center-text-mobile" id="whatwedo">
+                            <a href="#services">
+                                Readmore
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <h3>Our clients</h3>
+                
+
+                <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Our clients</h3>
                 <div id="clients">
                 	<div class="imgrow">
-                        <img class="client_logo child0 mobile" src="../static/img/logos/nestle-logo.png">
-                		<img class="client_logo child1" src="../static/img/logos/nestle-logo.png">
+                        <img class="client_logo child0 mobile " data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" src="../static/img/logos/nestle-logo.png">
+                		<img class="client_logo child1" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" src="../static/img/logos/nestle-logo.png">
                 		<span class="break1 desktop"></span>
-                		<img class="client_logo child2" src="../static/img/logos/epicentr-logo.png">
+                		<img class="client_logo child2 " data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" src="../static/img/logos/epicentr-logo.png">
                 		<span class="break2 desktop"></span>
-                		<img class="client_logo child3" src="../static/img/logos/kimberly-logo.png">
+                		<img class="client_logo child3 " data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" src="../static/img/logos/kimberly-logo.png">
                 		<span class="break1 desktop"></span>
-                		<img class="client_logo child4" src="../static/img/logos/colins-logo.png">
+                		<img class="client_logo child4 " data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" src="../static/img/logos/colins-logo.png">
                 	</div>
                 	<div class="imgrow">
-                		<img class="client_logo child5" src="../static/img/logos/up-logo.png">
+                		<img class="client_logo child5 " data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000" src="../static/img/logos/up-logo.png">
                 		<span class="break1 desktop"></span>
-                		<img class="client_logo child6" src="../static/img/logos/bari-logo.png" id="bari">
+                		<img class="client_logo child6 " data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000" src="../static/img/logos/bari-logo.png" id="bari">
                 		<span class="break2 desktop"></span>
-                		<img class="client_logo child7" src="../static/img/logos/mediamarketing-logo.png">
+                		<img class="client_logo child7 " data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000" src="../static/img/logos/mediamarketing-logo.png">
                 		<span class="break1 desktop"></span>
-                		<img class="client_logo child8" src="../static/img/logos/leafus-logo.png">
+                		<img class="client_logo child8 " data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000" src="../static/img/logos/leafus-logo.png">
                 	</div>
                 </div>
+                <a class="cl-prev mobile" href="#">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="cl-next mobile" href="#">
+                    <i class="fa fa-angle-right"></i>
+                </a>
             </div>
         </section>
-        <section id="services">
+        <section id="services" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <div class="dark-bg">
-                <h2>
-                    Services and <br> prices
-                </h2>
-                <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+                <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                    <h2>
+                        Services and <br> prices
+                    </h2>
+                    <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+                </div>
                 <div id="services-text">
                     <div class="row servicerow">
                         <div class="col">
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="row" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"> 
+                                <div class="col-md-6 col-sm-12">
                                     <div class="row workhead">
                                         Website development
                                     </div>
@@ -197,10 +250,10 @@
                                         We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="row work">
                                         Landing page
-                                        <div class="price">3000 $</div>
+                                        <div class="price">2500 $</div>
                                     </div>
                                     <div class="row work">
                                         Corporate website
@@ -215,6 +268,10 @@
                                         <div class="price">10000 $</div>
                                     </div>
                                     <div class="row work">
+                                        Wordpress website
+                                        <div class="price">99999 $</div>
+                                    </div>
+                                    <div class="row work">
                                         Individual
                                         <div class="price">on request</div>
                                     </div>
@@ -223,8 +280,8 @@
                         </div>
                         <!-- col2 -->
                         <div class="col">
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="row" data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000">
+                                <div class="col-md-6 col-sm-12">
                                     <div class="row workhead">
                                         SMM
                                     </div>
@@ -232,25 +289,25 @@
                                         Social media management involves so much more than just publishing content. Brands need to utilize these channels to tell their story and engage with their audience.
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="row work">
-                                        Landing page
+                                        Instagram
                                         <div class="price">1500 $</div>
                                     </div>
                                     <div class="row work">
-                                        Corporate website
-                                        <div class="price">3500 $</div>
+                                        Facebook
+                                        <div class="price">2000 $</div>
                                     </div>
                                     <div class="row work">
-                                        Online store
-                                        <div class="price">6000 $</div>
+                                        Twitter
+                                        <div class="price">2000 $</div>
                                     </div>
                                     <div class="row work">
-                                        Services & Portals
-                                        <div class="price">8000 $</div>
+                                        VK
+                                        <div class="price">8888 $</div>
                                     </div>
                                     <div class="row work">
-                                        Individual
+                                        Full package
                                         <div class="price">on request</div>
                                     </div>
                                 </div>
@@ -262,8 +319,8 @@
 
                     <div class="row servicerow">
                             <div class="col">
-                                <div class="row">
-                                    <div class="col-6">
+                                <div class="row" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                                    <div class="col-md-6 col-sm-12">
                                         <div class="row workhead">
                                             SEO
                                         </div>
@@ -271,25 +328,21 @@
                                             It's not about increasing traffic. It's about increasing the right type of traffic. Our team creates and execute all-inclusive digital marketing and SEO campaigns.
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-md-4 col-sm-12">
                                         <div class="row work">
-                                            Landing page
+                                            Google
                                             <div class="price">1500 $</div>
                                         </div>
                                         <div class="row work">
-                                            Corporate website
+                                            Yandex
                                             <div class="price">3500 $</div>
                                         </div>
                                         <div class="row work">
-                                            Online store
+                                            Pagespeed Insights
                                             <div class="price">6000 $</div>
                                         </div>
                                         <div class="row work">
-                                            Services & Portals
-                                            <div class="price">8000 $</div>
-                                        </div>
-                                        <div class="row work">
-                                            Individual
+                                            Full package
                                             <div class="price">on request</div>
                                         </div>
                                     </div>
@@ -297,8 +350,8 @@
                             </div>
                             <!-- col2 -->
                             <div class="col">
-                                <div class="row">
-                                    <div class="col-6">
+                                <div class="row" data-aos="fade-right" data-aos-delay="550" data-aos-duration="1000">
+                                    <div class="col-md-6 col-sm-12">
                                         <div class="row workhead">
                                             Digital consulting
                                         </div>
@@ -306,26 +359,18 @@
                                             We create meaningful experiences that enable business growth, transform brands & improve customer experience.
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-md-4 col-sm-12">
                                         <div class="row work">
-                                            Landing page
+                                            Compose strategy 
                                             <div class="price">1500 $</div>
                                         </div>
                                         <div class="row work">
-                                            Corporate website
-                                            <div class="price">3500 $</div>
+                                            Website support
+                                            <div class="price">350 $</div>
                                         </div>
                                         <div class="row work">
-                                            Online store
+                                            Partnership
                                             <div class="price">6000 $</div>
-                                        </div>
-                                        <div class="row work">
-                                            Services & Portals
-                                            <div class="price">8000 $</div>
-                                        </div>
-                                        <div class="row work">
-                                            Individual
-                                            <div class="price">on request</div>
                                         </div>
                                     </div>
                                 </div>
@@ -375,19 +420,13 @@
             	</ul>
             </div>
         </section>
-        <div id="footer">
-                    © Digisol Agency, All rights reserved.
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-behance"></i> </a>
-                    <a href="https://github.com/digisol-agency" target="_blank">
-                        <i class="fab fa-github-alt"></i>
-                    </a>
-                </div>
+        <!-- TAKE ME TO THE TOP btn -->
+        <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
     </div>
 
-    <script>
-
-    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
 </body>
 </html>
