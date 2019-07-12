@@ -390,7 +390,7 @@ h1 span{
 
 .desktop-menu ul li{
   display:inline;
-  margin: 0 43px;
+  margin: 0 42px;
   font-family: Raleway;
   font-style: normal;
   font-weight: 400;
@@ -484,6 +484,15 @@ section h2{
   margin-bottom: 1% !important;
 }
 
+.halfblock{
+  display: inline-block;
+  width: 47%;
+}
+
+.halfblock:not(:first-child){
+  margin-left: 4%;
+}
+
 #about-us .halftext{
   font-family: Raleway, normal;
   font-weight: normal;
@@ -508,12 +517,12 @@ section h2{
 }
 
 #whatwedo{
-  margin-top: 3%;
+  margin-top: 8%;
   text-align: left;
 }
 
 #whatwedo a{
-  padding: 1.2% 3%;
+  padding: 15px 25px;
   border-radius: 35px;
   font-size: 18px;
   line-height: 20px;

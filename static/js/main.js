@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     */
     $(".big").rotate(-45);
     $(".small").rotate(-45);
+    if (isMobile){
+        $(".big").rotate(-145);
+        $(".small").rotate(-145);
+    }
 
     var big = $(".big");
     var offset_big = big.offset();
@@ -227,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
-    $('.desktop-menu a[href*="#"], .scroll-down').on('click', function(e) {
+    $('.desktop-menu a[href*="#"], .scroll-down, #whatwedo a').on('click', function(e) {
       e.preventDefault()
 
       $('html, body').animate(
