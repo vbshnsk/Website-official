@@ -229,16 +229,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
       // click logo to scroll 1st slide
-      $("#logo, .digisol-item-pair").on( "click", function(e){
+      $("#logo, .layer1").on( "click", function(e){
             first_slide()
         });
 
         // scroll 1st slide
     function first_slide(){
-        var position = $("#slider").offset().bottom;
+        var position = $("#about-us").offset().top;
     
         $("body, html").animate({
-            scrollTop: position
+            scrollTop: position - 120
         }, 300 /* speed */ );
     }
 
