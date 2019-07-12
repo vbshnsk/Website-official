@@ -1034,6 +1034,9 @@ input#sendform:hover{
   margin-bottom: -100px
 }
 
+.title img{
+  margin-bottom: 7%; 
+}
 
 #portfolio h2{
   font-weight: normal;
@@ -1053,46 +1056,63 @@ input#sendform:hover{
   justify-content: flex-end;
 }
 
-.part3, .part6{
-  display: inline-block;
-  height: 100%;
-  text-align: initial;
-  box-sizing: border-box;
+#items{
+  transition: transform 1000ms;
+  height: 70%;
+  margin-top: 2%;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -ms-max-content;
 }
 
-.part3{
-  width: 24%;
+.edge{
+  width: 400%;
 }
 
-.part6{
-  width: 50%;
-}
-
-.part6.thumbnail{
+#yana-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/yana.jpg);
   background-size: cover;
-  background-position: center top;
-  vertical-align: top;
-  /*margin-left: -5px;*/
+}
+  
+#leafus-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/leafus.jpg);
+  background-size: cover;
 }
 
-.part3.description{
-  padding: 15% 5% 5% 3%;
+#bari-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/bari.jpg);
+  background-size: cover;
 }
 
-.description.yellow{
+#yana-port .description{
   background: rgba(216, 179, 106, 0.85);
 }
 
-.description.blue{
+#leafus-port .description{
   background: rgba(95, 134, 207, 0.85);
 }
 
-.description.red{
-  background: rgba(235, 90, 85, 0.85);
+#bari-port .description{
+  background:  rgba(235, 90, 85, 0.85);
 }
 
-#portfolio .description .gradline{
-  margin: 0;
+.container{
+  display: inline-flex;
+  height: 100%; 
+}
+
+.description{
+  text-align: left;
+  width: 25%;
+  min-width: 300px;
+  padding: 5% 7% 0 3%;
+  flex: 1;
+}
+
+.thumbnail{
+  flex: 2;
+  margin-right: 5%;
 }
 
 .description h4{
@@ -1102,7 +1122,7 @@ input#sendform:hover{
 }
 
 .description p{
-  margin-top: 30px;
+  margin-top: 30px; 
   font-size: 16px;
   font-weight: 200;
   line-height: 16px;
@@ -1113,6 +1133,17 @@ input#sendform:hover{
   height: 2px;
 }
 
+#controls{
+  width: 30%;
+  margin: 2% auto;
+}
+
+#controls li{
+  display: inline-block;
+}
+
+#slider{
+  height: 55px;
 /*items*/
 .yana{
   background: url("../img/portfolio/thumbnails/yana.jpg");
@@ -1126,8 +1157,61 @@ input#sendform:hover{
   background: url("../img/portfolio/thumbnails/bari.jpg");
 }
 
+#slider input{
+  width: 100px;
+  margin: 0 10px;
+}
 
+#prev{
+  float: left;
+}
 
+#next{
+  float: right;
+}
+
+#prev, #next{
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  border: 1px solid white;
+}
+
+.arrow{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  transition: all 500ms;
+}
+
+#prev .arrow{
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  top: 4px;
+  left: -1px;
+}
+
+#next .arrow{
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  bottom: 4px;
+  right: -1px;
+}
+
+.point{
+  width: 13px;
+  height: 13px;
+  border: 1px solid white;
+  border-radius: 13px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 500ms;
+  background: white;
+}
+
+  
 /*
  *  scroll bar style
  */
@@ -1427,16 +1511,6 @@ input#sendform:hover{
     margin-top: 15%;
   }
 
-  .portfolio-bg{
-    margin: 0 5%;
-    padding: 11%;
-  }
-
-  .portfolio-bg > *{
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-
   .client_logo:not(.child0):not(.child1){
     display: none;
   }
@@ -1501,12 +1575,6 @@ input#sendform:hover{
     width: 100%;
     box-sizing: content-box;
 }
-
-  .portfolio-item{
-    margin-top: 5%;
-    flex-direction: column;
-    border-bottom: 20px solid transparent;
-  }
 
   .empty.part3{
     display: none;
