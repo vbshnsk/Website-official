@@ -51,7 +51,7 @@
 }
 
 .opaque{
-  opacity: 0 !important;
+  /*opacity: 0 !important;*/
 }
 
 .goback{
@@ -526,19 +526,6 @@ section h2{
   animation-delay: 0.5s;
 }
 
-.left1{
-  animation-delay: 0.8s;
-}
-
-.left2{
-  animation-delay: 1s;
-}
-.left3{
-  animation-delay: 1.2s;
-}
-.left4{
-  animation-delay: 1.4s;
-}
 
 .imgrow img:hover{
   filter: grayscale(0%);

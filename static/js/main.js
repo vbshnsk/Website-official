@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // detect screen size
     var isMobile = window.matchMedia("only screen and (max-width: 812px)").matches;
-
-	/*
+	
+    /*
     circle rotation
     */
     $(".big").rotate(-45);
@@ -271,30 +271,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c1");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c1");
                 // if scrolled down
-                if(scrollAmount > position) {
-                    e.preventDefault();
-                    first_slide()
-                }
+                // if(scrollAmount > position) {
+                //     e.preventDefault();
+                //     first_slide()
+                // }
             }
             else if ( (roundScroll > 10) && (roundScroll <= 29) ){
                 // about us
-                $("#about-us").addClass("animated fadeInUp")
-                $("#about-us .fromtop-animation").addClass("animated fadeInDown")
-                $(".imgrow img, #about-us h3").addClass("animated fadeInLeft")
+                // $("#about-us").addClass("animated fadeInUp")
+                // $("#about-us .fromtop-animation").addClass("animated fadeInDown")
+                // $(".imgrow img, #about-us h3").addClass("animated fadeInLeft")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c2");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c2");
             }
             else if ( (roundScroll > 29) && (roundScroll <= 45) ){
                 // services and prices
-                $("#services").addClass("animated fadeInUp")
-                $("#services .fromtop-animation").addClass("animated fadeInDown")
-                $("#services .left-animaton").addClass("animated fadeInLeft")
+                // $("#services").addClass("animated fadeInUp")
+                // $("#services .fromtop-animation").addClass("animated fadeInDown")
+                // $("#services .left-animaton").addClass("animated fadeInLeft")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c3");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c3");
             }
             else if (roundScroll > 45){
                 // portfolio    
-                $("#portfolio").addClass("animated fadeInUp")
+                // $("#portfolio").addClass("animated fadeInUp")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c4");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c4");
             }
@@ -302,6 +302,26 @@ document.addEventListener('DOMContentLoaded', function() {
         
         position = scrollAmount;
           
+    });
+
+
+    // AOS
+
+    AOS.init();
+
+    // You can also pass an optional settings object
+    // below listed default settings
+    AOS.init({
+      // Global settings:
+      disable: "mobile", // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
     });
 
 
