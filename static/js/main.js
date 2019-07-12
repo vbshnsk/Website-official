@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       $('html, body').animate(
         {
-          scrollTop: $($(this).attr('href')).offset().top - 100,
+          scrollTop: $($(this).attr('href')).offset().top - 100, // TODO: find out why it gor too far
         },
         500,
         'linear'
@@ -245,35 +245,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /*
      * scroll monitoring effects
-    */
+     */
     var position = $(window).scrollTop(); 
     $(document).scroll(function(e){
-        var scrollAmount = $(window).scrollTop();
+        var scrollAmount = $(window).scrollTop();  
         var documentHeight = $(document).height();
         var windowHeight = window.innerHeight;
-
         var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
         var roundScroll = Math.round(scrollPercent)
-        var cof = windowHeight / 320
+        var cof = windowHeight / 320 // circle diameter == 320px
         var finalShift = cof * roundScroll
 
         if (isMobile){
-              // circle position depends on scroll distance (mobile)
+              // track scroll position on MOBILE devices
+              // chane circles y-pos accordingly
               $("section").removeClass("opaque")
               $(".big").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
               $(".small").css({"-webkit-transform":"translate(0, -" + finalShift + "%)"})
 
         }
+        // track scroll position on DESKTOP devices
+        // TODO: refactor this using AOS triggers
         else{
             console.log(roundScroll)
             if (roundScroll <= 10){
+                // main
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c1");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c1");
-                // if scrolled down
-                // if(scrollAmount > position) {
-                //     e.preventDefault();
-                //     first_slide()
-                // }
             }
             else if ( (roundScroll > 10) && (roundScroll <= 29) ){
                 // about us
@@ -291,18 +289,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c4");
             }
         }
-        
         position = scrollAmount;
-          
     });
 
-
     // AOS
-
-    AOS.init();
-
-    // You can also pass an optional settings object
-    // below listed default settings
     AOS.init({
       // Global settings:
       disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -312,18 +302,30 @@ document.addEventListener('DOMContentLoaded', function() {
       useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
       disableMutationObserver: false, // disables automatic mutations' detections (advanced)
       debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
+      throttleDelay: 50, // the delay on throttle used while scrolling the page (advanced)
     });
 
-
+    // take me to the top
+    if ($('#back-to-top').length) {
+        var scrollTrigger = 100, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
 
 }, false);
-
-
-
-
-
-
-
-
