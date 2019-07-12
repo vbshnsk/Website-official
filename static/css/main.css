@@ -562,8 +562,7 @@ section h2{
 .imgrow img{
   position: relative;
   width: 14%;
-  filter: grayscale(100%);
-  opacity: 0.5;
+  filter: grayscale(100%) brightness(0.6);
   transition: all 0.5s ease !important;
   animation-delay: 1s;
 }
@@ -578,11 +577,9 @@ section h2{
 
 
 .imgrow img:hover{
-  filter: grayscale(0%);
   -webkit-filter: grayscale(0) !important;
   -moz-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
-  opacity: 1 !important;
 }
 
 #bari{
@@ -868,10 +865,10 @@ section h2{
 
 #popup-contact textarea{
   width: 100%;
-  padding-top: 10px;
+  padding: 10px 0;
   margin-top: -10px;
   overflow-y: hidden;
-  height: 35px;
+  height: 100%;
 }
 
 .tallfield{
@@ -881,7 +878,7 @@ section h2{
 
 .tallfield textarea::placeholder{
   position: relative;
-  bottom: -55px;
+  bottom: -50px;
 }
 
 input#sendform{
@@ -1571,6 +1568,7 @@ input#sendform:hover{
 
   #popup-contact textarea {
     margin-top: 10px;
+    height: 70%;
   }
 
   .input-file-container {

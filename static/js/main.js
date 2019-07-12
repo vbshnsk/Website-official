@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileInfo = $("#attach-text");
     const realInput = $("#real-input");
 
-    // click on image (clip, or cross on hover)
+        // click on image (clip, or cross on hover)
     uploadButton.click(function(e) {
         // if we pushing on clip (ading file)
         if ( $("#attach-clip img").hasClass( "addfile" ) )  {
@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // form validation
-
         // name
     $('#contact_name input').on('input', function() {
         var input = $(this);
@@ -158,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#contact_name').removeClass("okborder").addClass("badborder");
         }
     });
-
         // email
     $('#contact_email input').on('input', function() {
         var input = $(this);
@@ -230,7 +228,10 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu()
           }
       });
-
+    
+    /*
+     * header (desktop) menu click to id 
+     */
     $('.desktop-menu a[href*="#"], .scroll-down, #whatwedo a').on('click', function(e) {
       e.preventDefault()
 
@@ -305,9 +306,12 @@ document.addEventListener('DOMContentLoaded', function() {
       throttleDelay: 50, // the delay on throttle used while scrolling the page (advanced)
     });
 
-    // take me to the top
+    /*
+     * take me to the top (show on 1/3 of the scroll)
+     */
     if ($('#back-to-top').length) {
-        var scrollTrigger = 100, // px
+        var thirdPage = $(document).height() / 3;
+        var scrollTrigger = thirdPage, // px
             backToTop = function () {
                 var scrollTop = $(window).scrollTop();
                 if (scrollTop > scrollTrigger) {
@@ -327,5 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 700);
         });
     }
+
+
 
 }, false);
