@@ -264,6 +264,68 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
+      /* portfolio slider buttons */
+      
+    var prevButton = document.getElementById("prev");
+    var nextButton = document.getElementById("next");
+    var thumbnails = document.getElementById("items");
+    var thumbnailContainers = $(".container");
+    var maxWidth = parseFloat($(thumbnails).css("width"));
+    var current = 0;
+    var offset = 0;
+    var max = thumbnailContainers.length;
+
+
+    var slideBackward = () =>{
+        if(current > 0){
+            var containerWidth = parseFloat(thumbnailContainers.eq(current).css("width"));
+            offset += containerWidth / maxWidth * 100;
+            thumbnails.style.webkitTransform = "translateX(" + offset + "%)";
+            current--;
+        }
+    }
+
+    var slideForward = () =>{
+        if(current < max - 1){
+            var containerWidth = parseFloat(thumbnailContainers.eq(current).css("width"));
+            offset -= containerWidth / maxWidth * 100;
+            thumbnails.style.webkitTransform = "translateX(" + offset + "%)";
+            current++;
+        }
+    }
+
+    $(nextButton).click(slideForward);
+    $(prevButton).click(slideBackward);
+
+
+    /* button hover animations */
+
+    var circlePrev = $("#prev .point");
+    var circleNext = $("#next .point");
+    var arrowPrev = $("#prev .arrow");
+    var arrowNext = $("#next .arrow");
+
+    var hoverOutPrev = () =>{
+        circlePrev.css({"transform":"translate(-50%, -50%) scale(0)"});
+        arrowPrev.css({"transform":"translate(0%, 0%)"});
+    };
+    var hoverInPrev = () =>{
+        circlePrev.css({"transform":"translate(-50%, -50%) scale(1)"});
+        arrowPrev.css({"transform":"translate(-50%, 50%)"});
+    };
+
+    var hoverOutNext = () =>{
+        circleNext.css({"transform":"translate(-50%, -50%) scale(0)"});
+        arrowNext.css({"transform":"translate(0%, 0%)"});
+    };
+    var hoverInNext = () =>{
+        circleNext.css({"transform":"translate(-50%, -50%) scale(1)"});
+        arrowNext.css({"transform":"translate(50%, -50%)"});
+    };
+
+    $(prevButton).hover(hoverInPrev, hoverOutPrev);
+    $(nextButton).hover(hoverInNext, hoverOutNext);
+
     /*
     circle position depends on scroll distance (mobile)
     */
@@ -286,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
     });
 
+    
 
 
 }, false);

@@ -982,6 +982,9 @@ input#sendform:hover{
   margin-bottom: -100px
 }
 
+.title img{
+  margin-bottom: 7%; 
+}
 
 #portfolio h2{
   font-weight: normal;
@@ -990,56 +993,63 @@ input#sendform:hover{
 
 .portfolio-bg{
     background-color: rgba(0, 0, 0, 0.82);
-    margin: 65px 2% 10% 2%;
+    margin: 65px 0 5% 0;
 }
 
-.portfolio-item{
-  height: 100%;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
+#items{
+  transition: transform 1000ms;
+  height: 70%;
+  margin-top: 2%;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -ms-max-content;
 }
 
-.part3, .part6{
-  display: inline-block;
-  height: 100%;
-  text-align: initial;
-  box-sizing: border-box;
+.edge{
+  width: 400%;
 }
 
-.part3{
-  width: 24%;
+#yana-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/yana.jpg);
+}
+  
+#leafus-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/leafus.jpg);
 }
 
-.part6{
-  width: 50%;
+#bari-port .thumbnail{
+  background: url(../img/portfolio/thumbnails/bari.jpg);
 }
 
-.part6.thumbnail{
-  background-size: cover;
-  background-position: center top;
-  vertical-align: top;
-  /*margin-left: -5px;*/
-}
-
-.part3.description{
-  padding: 15% 5% 5% 3%;
-}
-
-.description.yellow{
+#yana-port .description{
   background: rgba(216, 179, 106, 0.85);
 }
 
-.description.blue{
+#leafus-port .description{
   background: rgba(95, 134, 207, 0.85);
 }
 
-.description.red{
-  background: rgba(235, 90, 85, 0.85);
+#bari-port .description{
+  background:  rgba(235, 90, 85, 0.85);
 }
 
-#portfolio .description .gradline{
-  margin: 0;
+.container{
+  display: inline-flex;
+  height: 100%;
+}
+
+.description{
+  text-align: left;
+  width: 25%;
+  min-width: 300px;
+  flex: 1;
+}
+
+.thumbnail{
+  background-size: cover;
+  flex: 2;
+  margin-right: 5%;
 }
 
 .description h4{
@@ -1049,7 +1059,7 @@ input#sendform:hover{
 }
 
 .description p{
-  margin-top: 30px;
+  margin-top: 30px; 
   font-size: 16px;
   font-weight: 200;
   line-height: 16px;
@@ -1060,21 +1070,74 @@ input#sendform:hover{
   height: 2px;
 }
 
-/*items*/
-.yana{
-  background: url(../img/portfolio/thumbnails/yana.jpg);
+#controls{
+  width: 30%;
+  margin: 2% auto;
 }
 
-.leafus{
-  background: url(../img/portfolio/thumbnails/leafus.jpg);
+#controls li{
+  display: inline-block;
 }
 
-.bari{
-  background: url(../img/portfolio/thumbnails/bari.jpg);
+#slider{
+  height: 55px;
 }
 
+#slider input{
+  width: 100px;
+  margin: 0 10px;
+}
 
+#prev{
+  float: left;
+}
 
+#next{
+  float: right;
+}
+
+#prev, #next{
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  border: 1px solid white;
+}
+
+.arrow{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  transition: all 500ms;
+}
+
+#prev .arrow{
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  top: 4px;
+  left: -1px;
+}
+
+#next .arrow{
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  bottom: 4px;
+  right: -1px;
+}
+
+.point{
+  width: 13px;
+  height: 13px;
+  border: 1px solid white;
+  border-radius: 13px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 500ms;
+  background: white;
+}
+
+  
 /*
  *  scroll bar style
  */
@@ -1335,16 +1398,6 @@ input#sendform:hover{
     height: auto;
   }
 
-  .portfolio-bg{
-    margin: 0 5%;
-    padding: 11%;
-  }
-
-  .portfolio-bg > *{
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-
   .client_logo:not(.child0):not(.child1){
     display: none;
   }
@@ -1393,12 +1446,6 @@ input#sendform:hover{
     width: 100%;
     box-sizing: content-box;
 }
-
-  .portfolio-item{
-    margin-top: 5%;
-    flex-direction: column;
-    border-bottom: 20px solid transparent;
-  }
 
   .empty.part3{
     display: none;
