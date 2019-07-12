@@ -398,6 +398,23 @@ h1 span{
   line-height: 19px;
 }
 
+.submenu:after{
+  content: "";
+  background: url(../img/submenu-angle.png);
+  width: 7px;
+  height: 7px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 6px;
+}
+
+#blog-link{
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  display: none;
+}
+
 .topnav-right{
   float: right;
   margin-right: 10px;
@@ -567,7 +584,7 @@ section h2{
 .dark-bg{
   background-color: rgba(0, 0, 0, 0.82);
   padding: 1% 7% 3%;
-  margin: 0 2% 4% 2%;
+  margin: 2%;
 }
 
 .dark-bg h2{

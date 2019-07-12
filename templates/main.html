@@ -55,9 +55,18 @@
         </a>
         <div class="desktop-menu desktop">
             <ul>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li class="submenu">
+                    <a href="#about-us">About Us</a>
+                    <ul class="dropdown" id="blog-link">
+                        <li><a href="#blog">Blog</a></li>
+                      </ul>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
             </ul>
         </div>
         <div class="topnav-right">
@@ -353,7 +362,7 @@
                 </div>
             </div>
         </section>
-        <section id="portfolio">
+        <section id="portfolio" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <div class="portfolio-bg scrollable coolscroll">
                     <div class="title">
                         <h2>Our works</h2>
