@@ -235,13 +235,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // scroll 1st slide
     function first_slide(){
-        var position = $("#about-us").offset().top;
+        var position = $("#slider").offset().bottom;
     
         $("body, html").animate({
             scrollTop: position
         }, 300 /* speed */ );
-        e.preventDefault();
-
     }
 
     /*
