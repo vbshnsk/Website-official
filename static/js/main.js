@@ -278,23 +278,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             else if ( (roundScroll > 10) && (roundScroll <= 29) ){
                 // about us
-                // $("#about-us").addClass("animated fadeInUp")
-                // $("#about-us .fromtop-animation").addClass("animated fadeInDown")
-                // $(".imgrow img, #about-us h3").addClass("animated fadeInLeft")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c2");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c2");
             }
             else if ( (roundScroll > 29) && (roundScroll <= 45) ){
                 // services and prices
-                // $("#services").addClass("animated fadeInUp")
-                // $("#services .fromtop-animation").addClass("animated fadeInDown")
-                // $("#services .left-animaton").addClass("animated fadeInLeft")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c3");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c3");
             }
             else if (roundScroll > 45){
                 // portfolio    
-                // $("#portfolio").addClass("animated fadeInUp")
                 $(".big").removeClass("c1 c2 c3 c4").addClass("c4");
                 $(".small").removeClass("c1 c2 c3 c4").addClass("c4");
             }
