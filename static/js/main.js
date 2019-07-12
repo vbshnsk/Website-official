@@ -227,25 +227,17 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
-      
-      // click logo to scroll 1st slide
-      // $("#logo, .layer1").on( "click", function(e){
-      //       first_slide()
-      //   });
+    $('.desktop-menu a[href*="#"], .scroll-down').on('click', function(e) {
+      e.preventDefault()
 
-        // scroll 1st slide
-    function first_slide(){
-        var position = $("#about-us").offset().top;
-    
-        $("body, html").animate({
-            scrollTop: position - 120
-        }, 300 /* speed */ );
-    }
-
-    $('.scroll-down').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-    });
+      $('html, body').animate(
+        {
+          scrollTop: $($(this).attr('href')).offset().top,
+        },
+        500,
+        'linear'
+      )
+    })
 
     /*
      * scroll monitoring effects
