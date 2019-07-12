@@ -545,7 +545,7 @@ section h2{
 .dark-bg{
   background-color: rgba(0, 0, 0, 0.82);
   padding: 1% 7% 3%;
-  margin: 2%;
+  margin: 0 2% 4% 2%;
 }
 
 .dark-bg h2{
@@ -1378,33 +1378,32 @@ input#sendform:hover{
     padding-left: 5px;
   }
 
-  .imgrow:first-child:before{
-    background: url("../img/red-cross.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 40px;
-    transform: translate(-110%, -5px);
-    height: 40px;
+  .cl-prev{
+    position: relative;
     content: "";
-    display: inline-block;
     background-size: contain;
     cursor: pointer;
-    
+    color: white;
+    opacity: 0.6;
+    top: -36px;
+    left: -8%;
+    font-size: 40px;
+    height: 0;
+    display: block;
   }
 
-  .imgrow:first-child:after{
-    background: url("../img/green-check.png");
-    background-repeat: no-repeat;
+  .cl-next{
     background-size: contain;
-    position: absolute;
-    width: 40px;
-    transform: translate(10%, -5px);
-    height: 40px;
+    position: relative;
     content: "";
-    display: inline-block;
     cursor: pointer;
-    
+    color: white;
+    opacity: 0.6;
+    top: -36px;
+    left: 100%;
+    font-size: 40px;
+    height: 0;
+    display: block;
   }
 
   #services-text {
