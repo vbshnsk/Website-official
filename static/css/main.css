@@ -1142,8 +1142,9 @@ input#sendform:hover{
   display: inline-block;
 }
 
-#slider{
+#slider_portf{
   height: 55px;
+}
 /*items*/
 .yana{
   background: url("../img/portfolio/thumbnails/yana.jpg");
@@ -1157,7 +1158,7 @@ input#sendform:hover{
   background: url("../img/portfolio/thumbnails/bari.jpg");
 }
 
-#slider input{
+#slider_portf input{
   width: 100px;
   margin: 0 10px;
 }
